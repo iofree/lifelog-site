@@ -13,3 +13,11 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+.bundle
+.sass-cache
+_site
+Gemfile.lock
+
+.idea/
+
