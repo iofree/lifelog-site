@@ -14,8 +14,8 @@ app_icon                                  : assets/logo.png                     
 app_name                                  : 人生笔记         # Automatically populates if not set and if iOS app ID is set.  Otherwise enter manually.
 app_price                                 : 免费                                          # Automatically populates if not set and if iOS app ID is set.  Otherwise enter manually.
 app_description                           : |
-  写日记，记心情，贴视频，贴照片，支持实况照片，支持日历，地图视角查看日记，支持导出PDF。
-  无广告，重视隐私安全，数据本地存储，自动备份，永久保存。
+  支持添加视频，照片，实况，录音；丰富的富文本操作，支持相册日历，地图视角，时间线；支持生成分享图，导出PDF，源数据导出导入。
+  无广告，重视隐私安全，数据本地离线存储，自动备份，永久保存。
 
 enable_smart_app_banner                   : true                                      # Set to true to show a smart app banner at top of page on mobile devices.
 
