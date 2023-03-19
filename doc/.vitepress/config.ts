@@ -2,7 +2,10 @@ import {defineConfig} from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-    base: '/doc/',
+    base: '/docs/',
+    outDir: '../_site/docs',
+
+
     title: "人生笔记｜用户指南",
     description: "常用功能介绍",
     themeConfig: {

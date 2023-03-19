@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 用户指南
+title: 帮助
 include_in_header: true
 ---
 

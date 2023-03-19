@@ -3,4 +3,7 @@
 
 ```
 bundle exec jekyll serve
+
+cd doc
+pnpm run docs:dev
 ```
