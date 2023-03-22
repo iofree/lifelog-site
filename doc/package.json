@@ -1,6 +1,9 @@
 {
   "devDependencies": {
-    "vitepress": "1.0.0-alpha.60"
+    "flexsearch": "^0.7.31",
+    "markdown-it": "^13.0.1",
+    "vitepress": "1.0.0-alpha.60",
+    "vitepress-plugin-search": "1.0.4-alpha.19"
   },
   "scripts": {
     "docs:dev": "vitepress dev",

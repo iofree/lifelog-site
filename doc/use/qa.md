@@ -1,10 +1,9 @@
 ---
-layout: page
-title: 帮助
-include_in_header: true
+outline: deep
 ---
 
-# 常见问题
+# 常见问题回答
+
 ## 没有登陆换手机怎么办，如何备份
 App 支持网盘备份数据和数据导入导出，可以按需备份到网盘，或者导出数据，在新机从网盘恢复数据，或者自行导入数据。
 
@@ -16,12 +15,10 @@ App 支持网盘备份数据和数据导入导出，可以按需备份到网盘�
 ## 如何使用 WebDAV 备份
 [人生笔记 WebDAV 教程](https://docs.qq.com/doc/DVHJhRU9ubVNBblhR)
 
+## 是否支持手机和平板同步
+不支持，当前只支持数据备份和数据恢复，不支持自动在多设备间同步数据。
 
-# 联系我们
+## 日历上最早时间为啥有限制
+日历上显示的最早，最晚时间是根据你的日记时间来的。
 
-如果您在使用过程中遇到问题，或者有任何建议，请联系我们。
-
-- 人生笔记 App 内打开侧边栏，进入微信用户群
-- 邮件: [admin@iofree.xyz](mailto:admin@iofree.xyz)
-- Twitter: [Allen](https://twitter.com/Allen_Xuxu)
-- 微博: [顾_惜朝](https://weibo.com/u/5894049515)
+你可以创建一个日记，然后点击顶部的时间来进行自定义选择。
