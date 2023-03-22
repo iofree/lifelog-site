@@ -10,6 +10,9 @@ hero:
     - theme: alt
       text: 常见问题
       link: /use/qa
+    - theme: alt
+      text: App预览图
+      link: https://lifelog.iofree.xyz/
 
 features:
   - title: 富文本

@@ -6,8 +6,10 @@ outline: deep
 
 ## 反馈问题 / 提需求
 
-- 人生笔记 App 内打开侧边栏，进入用户群，按指引反馈问题
-- 邮件: [admin@iofree.xyz](mailto:admin@iofree.xyz)
+> QQ 频道是 QQ 内测的新功能，功能强大，可以更方便大家交流，反馈问题，提新需求。
+
+- 进入用户群。点击链接加入QQ频道【人生笔记 App】: https://pd.qq.com/s/309q62mln
+- 如无法加入QQ频道，可以📮邮箱联系: [admin@iofree.xyz](mailto:admin@iofree.xyz)
 
 
 ## 关注作者
