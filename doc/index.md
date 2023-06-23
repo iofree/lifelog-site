@@ -11,8 +11,14 @@ hero:
       text: 常见问题
       link: /use/qa
     - theme: alt
+      text: 下载App
+      link: /download/download
+    - theme: alt
       text: App预览图
       link: https://lifelog.iofree.xyz/
+    - theme: alt
+      text: 联系/关注我（微博/小红书）
+      link: /use/contact
 
 features:
   - title: 富文本

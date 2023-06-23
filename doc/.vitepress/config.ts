@@ -35,6 +35,7 @@ export default defineConfig({
                     {text: '备份', link: '/use/backup'},
                     {text: '搜索', link: '/use/search'},
                     {text: 'PDF导出', link: '/use/pdf'},
+                    {text: '安卓会员迁移', link: '/use/migrate-vip'},
                 ]
             },
             {
