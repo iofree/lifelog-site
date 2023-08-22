@@ -8,11 +8,20 @@ outline: deep
 
 > QQ 频道是 QQ 内测的新功能，功能强大，可以更方便大家交流，反馈问题，提新需求。
 
-- 进入用户群。点击链接加入QQ频道【人生笔记 App】: https://pd.qq.com/s/309q62mln
+### 人生笔记 APP 用户群
+
+点击链接加入QQ频道【人生笔记 App】: https://pd.qq.com/s/309q62mln
+
+### 不忘提醒 APP 用户群
+
+点击链接加入QQ频道【不忘提醒 App】：https://pd.qq.com/s/76o265clk
+
+### 无法加入QQ频道
+
 - 如无法加入QQ频道，可以📮邮箱联系: [admin@iofree.xyz](mailto:admin@iofree.xyz)
 
-
 ## 关注作者
+
 > 最新更新动态，优惠活动，都会下面账号发布
 
 - Twitter: [Allen](https://twitter.com/Allen_Xuxu)
