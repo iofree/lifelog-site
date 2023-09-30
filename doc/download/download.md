@@ -17,6 +17,8 @@ outline: deep
 ### 下载渠道1(国内)：蓝奏云网盘网页下载（国内速度快）
 
 > 国内访问速度较快，网盘网页下载，无需登录
+> 
+> 需要先将浏览器切换为 桌面版模式 访问，原因查看： http://xhslink.com/AXiS1u
 
 先复制 密码: `5xqr`
 
@@ -28,7 +30,11 @@ outline: deep
 
 https://wwap.lanzoum.com/b047po74h
 
-### 下载渠道2(海外)：Github Release 下载
+### 下载渠道2 (加载速度相对较慢，下载耐心等等)
+
+https://apk.iofree.xyz/lifelog.apk
+
+### 下载渠道3(海外)：Github Release 下载
 
 [海外下载链接🔗](https://github.com/iofree/lifelog/releases/latest/download/lifelog.apk)
 
@@ -37,7 +43,7 @@ https://wwap.lanzoum.com/b047po74h
 ### Android 测试版
 
 > 新开发的功能，会在下方链接抢先发布
-> 
+>
 > 测试版和正式版本本质一样，相互覆盖安装不影响
 
 密码:
