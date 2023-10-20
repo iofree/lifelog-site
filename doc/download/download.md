@@ -4,6 +4,8 @@ outline: deep
 
 # 下载与更新App
 
+> 加入用户群： [人生笔记用户群](https://lifelog.iofree.xyz/docs/use/contact.html)
+
 ## Android 安装、后续更新
 
 > 安卓暂未上架国内各大应用商店（安卓应用商店皆为假冒），需要直接下载 APK 安装
@@ -19,9 +21,9 @@ https://apk.iofree.xyz/lifelog.apk
 > 需先将手机浏览器切换为 桌面版模式 来访问网盘，否则会提示需要蓝奏云网盘会员。
 > 通过改变手机浏览器模式，来绕过蓝奏云对手机浏览器的限制。
 >
-> 因为蓝奏云网盘不让免费分享安卓安装包给其他手机用户下载，我没钱充蓝奏云会员
+> 原因是：蓝奏云网盘不让免费分享安卓安装包给其他手机用户下载，我没钱充蓝奏云会员。
 >
-> 详细原因和教程请看： http://xhslink.com/AXiS1u
+> 详细原因和教程请看小红书笔记： http://xhslink.com/AXiS1u
 
 先复制 密码: `5xqr` ，然后访问 https://wwap.lanzoum.com/b047po74h
 
