@@ -18,6 +18,8 @@ outline: deep
 
 ### 无法加入QQ频道
 
+> 反馈问题或者bug，请提供截图/录屏，APP 版本和手机版本，以及详细的问题描述。
+
 - 如无法加入QQ频道，可以📮邮箱联系: [admin@iofree.xyz](mailto:admin@iofree.xyz)
 
 ## 关注作者
