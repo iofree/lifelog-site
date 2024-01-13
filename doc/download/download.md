@@ -4,11 +4,13 @@ outline: deep
 
 # 下载与更新App
 
+> 插播通知 📢
+> 
 > 🎉 新 App「人生规划局」上线啦！🎉
 >
-> [安卓下载](https://apk.iofree.xyz/planning.apk) ｜ [官网](https://planning.iofree.xyz)
+> 人生规划局:  [安卓下载](https://apk.iofree.xyz/planning.apk) ｜ [官网](https://planning.iofree.xyz)
 
-## Android 安装、后续更新
+## 人生笔记 Android 安装、后续更新
 
 > 加入用户群： [人生笔记用户群](https://lifelog.iofree.xyz/docs/use/contact.html)
 
