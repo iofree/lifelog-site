@@ -22,3 +22,5 @@ Gemfile.lock
 .idea/
 
 doc/node_modules/
+
+.DS_Store
