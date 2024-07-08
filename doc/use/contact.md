@@ -19,21 +19,9 @@ outline: deep
 
 ## 反馈问题 / 提需求
 
-> QQ 频道是 QQ 内测的新功能，功能强大，可以更方便大家交流，反馈问题，提新需求。
-
-### 人生笔记 APP 用户群
-
-点击链接加入QQ频道【人生笔记 App】: https://pd.qq.com/s/309q62mln
-
-### 不忘提醒 APP 用户群
-
-点击链接加入QQ频道【不忘提醒 App】：https://pd.qq.com/s/76o265clk
-
-### 无法加入QQ频道
-
 > 反馈问题或者bug，请提供截图/录屏，APP 版本和手机版本，以及详细的问题描述。
 
-- 如无法加入QQ频道，可以📮邮箱联系: [admin@iofree.xyz](mailto:admin@iofree.xyz)
+📮反馈邮箱: [admin@iofree.xyz](mailto:admin@iofree.xyz)
 
 ## 关注作者
 
