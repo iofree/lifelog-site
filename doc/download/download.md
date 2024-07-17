@@ -5,6 +5,7 @@ outline: deep
 # 下载与更新App
 
 访问下方网站下载(任选其一)：
+- https://apk.iofree.xyz/lifelog.apk
 - https://docs.qq.com/doc/DVHFJV21rWFh3TGVX
 - https://iofree.xyz
 
