@@ -4,7 +4,7 @@ outline: deep
 
 # 备份
 
-人生笔记支持iCloud备份（iOS独有）和WebDAV网盘备份。
+人生笔记支持iCloud备份（iOS独有）, 阿里云盘，以及WebDAV网盘备份。
 
 ## iCloud 备份（iOS独有）
 
