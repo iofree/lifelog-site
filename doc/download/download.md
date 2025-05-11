@@ -12,7 +12,6 @@ outline: deep
 海外或者其他未上架品牌的用户，可以直接链接下载 APK, 访问下方网站下载(任选其一)：
 - https://apk.iofree.xyz/lifelog.apk
 - https://docs.qq.com/doc/DVHFJV21rWFh3TGVX
-- https://iofree.xyz
 
 ## iOS 版直接在 App Store 下载和更新
 
