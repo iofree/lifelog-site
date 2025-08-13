@@ -1,8 +1,17 @@
 import { DefaultTheme, LocaleSpecificConfig } from 'vitepress'
 
 export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
-  title: 'Lifelog Note',
-  description: 'Record your life with text, images, videos, and audio',
+  title: 'Lifelog Note - Record Your Life with Multimedia Diary',
+  description: 'Lifelog Note is a powerful multimedia diary app that supports rich text editing, photos, videos, audio recording, calendar view, data export and more. Capture every beautiful moment of your life. Free download for iOS and Android.',
+  
+  head: [
+    // 英文页面特定的SEO标签
+    ['meta', { name: 'keywords', content: 'lifelog,diary app,journal,life recording,personal diary,multimedia diary,photo diary,video diary,audio diary,life journal,diary software,digital diary,electronic diary,mobile diary,free diary app,private diary' }],
+    ['meta', { property: 'og:locale', content: 'en_US' }],
+    ['link', { rel: 'alternate', hreflang: 'zh', href: 'https://lifelog.iofree.xyz/' }],
+    ['link', { rel: 'alternate', hreflang: 'en', href: 'https://lifelog.iofree.xyz/en/' }],
+    ['link', { rel: 'alternate', hreflang: 'x-default', href: 'https://lifelog.iofree.xyz/' }]
+  ],
 
   themeConfig: {
     siteTitle: 'Lifelog Note',

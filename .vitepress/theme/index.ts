@@ -9,6 +9,8 @@ import FeaturesSection from './components/FeaturesSection.vue'
 import FeaturesSectionEn from './components/FeaturesSectionEn.vue'
 import FeatureGallery from './components/FeatureGallery.vue'
 import FeatureGalleryEn from './components/FeatureGalleryEn.vue'
+import Breadcrumb from './components/Breadcrumb.vue'
+import StructuredData from './components/StructuredData.vue'
 
 
 export default {
@@ -21,6 +23,8 @@ export default {
     app.component('FeaturesSectionEn', FeaturesSectionEn)
     app.component('FeatureGallery', FeatureGallery)
     app.component('FeatureGalleryEn', FeatureGalleryEn)
+    app.component('Breadcrumb', Breadcrumb)
+    app.component('StructuredData', StructuredData)
     
     // 自定义语言切换逻辑
     if (typeof window !== 'undefined') {
