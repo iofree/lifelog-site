@@ -197,7 +197,6 @@ export default defineConfig({
     'md/zh/migrate-vip.md': 'docs/migrate-vip.md',
     'md/zh/migrate-data.md': 'docs/migrate-data.md',
     'md/zh/download.md': 'docs/download.md',
-    'md/zh/download/download.md': 'docs/download/download.md',
     'md/zh/privacy.md': 'privacy.md',
     'md/zh/terms.md': 'terms.md',
     
@@ -216,7 +215,6 @@ export default defineConfig({
     'md/en/migrate-vip.md': 'en/docs/migrate-vip.md',
     'md/en/migrate-data.md': 'en/docs/migrate-data.md',
     'md/en/download.md': 'en/docs/download.md',
-    'md/en/download/download.md': 'en/docs/download/download.md',
     'md/en/privacy.md': 'en/privacy.md',
     'md/en/terms.md': 'en/terms.md'
   }

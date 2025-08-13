@@ -25,67 +25,13 @@ export default {
     app.component('FeatureGalleryEn', FeatureGalleryEn)
     app.component('Breadcrumb', Breadcrumb)
     app.component('StructuredData', StructuredData)
-    
-    // 自定义语言切换逻辑
+
+    // 语言偏好记录
     if (typeof window !== 'undefined') {
       const LANG_KEY = 'vitepress-preferred-lang';
-      
-      // 监听DOM变化，拦截语言切换链接
-      const setupLanguageSwitchHandler = () => {
-        // 等待DOM加载完成
-        setTimeout(() => {
-          const handleLanguageSwitch = (event: Event) => {
-            const target = event.target as HTMLElement;
-            const link = target.closest('a[href]') as HTMLAnchorElement;
-            
-            if (!link) return;
-            
-            const href = link.getAttribute('href');
-            const currentPath = window.location.pathname;
-            
-            // 检查是否是语言切换链接
-            if (href && (href === '/' || href === '/en/' || href.startsWith('/en'))) {
-              // 如果当前在 /md 路径下
-              if (currentPath.startsWith('/md/')) {
-                event.preventDefault();
-                
-                let newPath: string;
-                if (href === '/' || (!href.includes('/en'))) {
-                  // 切换到中文
-                  newPath = currentPath.replace('/md/en/', '/md/zh/');
-                } else {
-                  // 切换到英文
-                  newPath = currentPath.replace('/md/zh/', '/md/en/');
-                }
-                
-                // 导航到新路径
-                router.go(newPath);
-                return;
-              }
-            }
-          };
-          
-          // 添加事件监听器
-          document.addEventListener('click', handleLanguageSwitch);
-          
-          // 清理函数
-          const cleanup = () => {
-            document.removeEventListener('click', handleLanguageSwitch);
-          };
-          
-          // 在路由变化时重新设置
-          router.onAfterRouteChanged = () => {
-            cleanup();
-            setTimeout(setupLanguageSwitchHandler, 100);
-          };
-        }, 100);
-      };
-      
-      // 初始设置
-      setupLanguageSwitchHandler();
-      
+
       router.onAfterRouteChanged = (to) => {
-        const isEnPath = to.startsWith('/en/') || to.startsWith('/md/en/');
+        const isEnPath = to.startsWith('/en/');
         const currentLang = isEnPath ? 'en' : 'zh';
         try {
           localStorage.setItem(LANG_KEY, currentLang);

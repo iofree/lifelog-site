@@ -44,7 +44,7 @@ import { screenshotsConfig } from '../../config/screenshots.js'
   name="Lifelog Note"
   text="Record your life with text, images, videos, and audio"
   tagline="Capture every beautiful moment of your life"
-  downloadLink="/en/download"
+  downloadLink="/en/docs/download"
   learnMoreLink="/en/"
 />
 
