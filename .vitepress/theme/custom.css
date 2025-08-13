@@ -1,0 +1,227 @@
+/* 简洁的页面样式优化 */
+
+/* Logo圆角处理 */
+.VPNavBarTitle .logo,
+.VPNavBar .logo,
+.VPNavBarTitle img,
+.VPNavBar img[src*="logo"] {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.VPNavBarTitle .logo:hover,
+.VPNavBar .logo:hover,
+.VPNavBarTitle img:hover,
+.VPNavBar img[src*="logo"]:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 确保logo在深色模式下也有合适的样式 */
+.dark .VPNavBarTitle .logo,
+.dark .VPNavBar .logo,
+.dark .VPNavBarTitle img,
+.dark .VPNavBar img[src*="logo"] {
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+.dark .VPNavBarTitle .logo:hover,
+.dark .VPNavBar .logo:hover,
+.dark .VPNavBarTitle img:hover,
+.dark .VPNavBar img[src*="logo"]:hover {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+}
+
+/* 下载按钮样式 */
+.download-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  margin: 10px 8px;
+  background: linear-gradient(135deg, #007AFF 0%, #0056CC 100%);
+  color: white !important;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.download-btn:hover {
+  background: linear-gradient(135deg, #0056CC 0%, #003D99 100%);
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+}
+
+.download-btn.android {
+  background: linear-gradient(135deg, #34C759 0%, #28A745 100%);
+  box-shadow: 0 4px 12px rgba(52, 199, 89, 0.3);
+  color: white !important;
+}
+
+.download-btn.android:hover {
+  background: linear-gradient(135deg, #28A745 0%, #1E7E34 100%);
+  box-shadow: 0 6px 20px rgba(52, 199, 89, 0.4);
+  color: white !important;
+}
+
+/* 移动端按钮优化 */
+@media (max-width: 768px) {
+  .download-btn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 12px auto;
+    text-align: center;
+    padding: 16px 20px;
+    font-size: 18px;
+  }
+}
+
+/* 页面布局优化 */
+.VPDoc {
+  padding: 0 !important;
+}
+
+.vp-doc {
+  padding: 0 !important;
+}
+
+/* 确保自定义组件与VitePress主题无缝集成 */
+.VPContent {
+  padding: 0 !important;
+}
+
+/* 隐藏默认的导航栏下方间距 */
+.VPNav + .VPLocalNav + .VPSidebar + .VPContent .VPDoc .container {
+  padding: 0;
+}
+
+/* 页面容器优化 */
+.vp-doc .container {
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+.vp-doc .content {
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+/* 响应式优化 */
+@media (max-width: 960px) {
+  .VPContent {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+/* 进一步优化导航栏和内容间距 */
+.VPNav {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+/* 减少文档页面顶部间距 */
+.VPDoc .container {
+  padding-top: 0 !important;
+}
+
+.VPDoc .content {
+  padding-top: 0 !important;
+}
+
+/* 移动端导航栏优化 */
+@media (max-width: 768px) {
+  /* 确保移动端导航栏紧凑 */
+  .VPNavBar {
+    height: 56px !important;
+    min-height: 56px !important;
+  }
+  
+  /* 移动端文档内容顶部间距最小化 */
+  .VPDoc h1:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  /* 移动端侧边栏按钮优化 */
+  .VPNavBarHamburger {
+    margin-right: 8px;
+  }
+  
+  /* 移动端内容区域紧贴导航栏 */
+  .VPContent {
+    padding-top: 56px !important;
+  }
+  
+  /* 移动端文档容器无额外间距 */
+  .VPDoc {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  /* 移动端文档内容无顶部边距 */
+  .VPDoc .container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  .VPDoc .content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 480px) {
+  .VPNavBar {
+    height: 52px !important;
+    min-height: 52px !important;
+    padding: 0 12px !important;
+  }
+  
+  .VPNavBarTitle {
+    font-size: 16px !important;
+  }
+  
+  .VPNavBarTitle .logo {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  
+  /* 超小屏幕内容区域调整 */
+  .VPContent {
+    padding-top: 52px !important;
+  }
+}
+
+/* 移动端强制覆盖所有可能的间距 */
+@media (max-width: 768px) {
+  /* 强制移除所有可能的顶部间距 */
+  .Layout .VPContent,
+  .VPApp .VPContent,
+  body .VPContent {
+    padding-top: 56px !important;
+    margin-top: 0 !important;
+  }
+  
+  /* 确保文档页面无额外间距 */
+  .Layout:has(.VPDoc) .VPContent,
+  .Layout:has(.VPSidebar) .VPContent {
+    padding-top: 56px !important;
+    margin-top: 0 !important;
+  }
+  
+  /* 文档内容区域无间距 */
+  .VPDoc,
+  .vp-doc {
+    margin-top: 0 !important;
+    padding-top: 8px !important;
+  }
+}
