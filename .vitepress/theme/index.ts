@@ -26,9 +26,30 @@ export default {
     app.component('Breadcrumb', Breadcrumb)
     app.component('StructuredData', StructuredData)
 
-    // 语言偏好记录
+    // 语言偏好记录和自动跳转
     if (typeof window !== 'undefined') {
       const LANG_KEY = 'vitepress-preferred-lang';
+
+      // 首页访问时检查语言偏好并自动跳转
+      const checkAndRedirect = () => {
+        if (window.location.pathname === '/') {
+          try {
+            const preferredLang = localStorage.getItem(LANG_KEY);
+            if (preferredLang === 'en') {
+              window.location.replace('/en/');
+            }
+          } catch (e) {
+            // 忽略localStorage错误
+          }
+        }
+      };
+
+      // 页面加载完成后检查
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', checkAndRedirect);
+      } else {
+        checkAndRedirect();
+      }
 
       router.onAfterRouteChanged = (to) => {
         const isEnPath = to.startsWith('/en/');
