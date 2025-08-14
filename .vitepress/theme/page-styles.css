@@ -1,0 +1,127 @@
+/* 针对特定页面的边距优化 - 使用高优先级选择器 */
+
+/* 只对文档页面修复导航栏遮挡问题 - 减少间距 */
+body[data-page-type="doc"] .VPContent,
+.VPContent.has-sidebar,
+.VPContent:has(.VPDoc) {
+  padding-top: calc(var(--vp-nav-height, 64px) + 8px) !important;
+}
+
+/* 移动端文档页面导航栏高度调整 - 最小化间距 */
+@media (max-width: 768px) {
+  body[data-page-type="doc"] .VPContent,
+  .VPContent.has-sidebar,
+  .VPContent:has(.VPDoc) {
+    padding-top: calc(var(--vp-nav-height, 56px) + 0px) !important;
+  }
+}
+
+/* 文档页面滚动锚点修复 */
+body:has(.VPDoc) {
+  scroll-padding-top: calc(var(--vp-nav-height, 64px) + 8px);
+}
+
+/* 移动端滚动锚点调整 */
+@media (max-width: 768px) {
+  body:has(.VPDoc) {
+    scroll-padding-top: calc(var(--vp-nav-height, 56px) + 0px);
+  }
+}
+
+/* 为特定页面设置合适的最大宽度和边距 */
+html body .VPApp .Layout .VPContent .VPDoc {
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  padding: 16px 48px !important;
+  margin-top: 0 !important;
+}
+
+.download-page .VPDoc,
+.privacy-page .VPDoc,
+.terms-page .VPDoc,
+.vp-doc {
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  padding: 16px 48px !important;
+}
+
+/* 移动端适配 - 减少内边距 */
+@media (max-width: 768px) {
+  html body .VPApp .Layout .VPContent .VPDoc,
+  .download-page .VPDoc,
+  .privacy-page .VPDoc,
+  .terms-page .VPDoc,
+  .vp-doc {
+    padding: 12px 24px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  html body .VPApp .Layout .VPContent .VPDoc,
+  .download-page .VPDoc,
+  .privacy-page .VPDoc,
+  .terms-page .VPDoc,
+  .vp-doc {
+    padding: 8px 16px !important;
+  }
+}/* 
+更精确的文档页面选择器 - 只对包含侧边栏或文档内容的页面应用 */
+.Layout:has(.VPSidebar) .VPContent,
+.Layout:has(.VPDoc) .VPContent {
+  padding-top: calc(var(--vp-nav-height, 64px) + 8px) !important;
+}
+
+/* 确保主页不受影响 - 重置主页的padding */
+.Layout:not(:has(.VPSidebar)):not(:has(.VPDoc)) .VPContent,
+.VPHome .VPContent {
+  padding-top: 0 !important;
+}
+
+/* 移动端调整 - 最小化间距 */
+@media (max-width: 768px) {
+  .Layout:has(.VPSidebar) .VPContent,
+  .Layout:has(.VPDoc) .VPContent {
+    padding-top: calc(var(--vp-nav-height, 56px) + 0px) !important;
+  }
+  
+  .Layout:not(:has(.VPSidebar)):not(:has(.VPDoc)) .VPContent,
+  .VPHome .VPContent {
+    padding-top: 0 !important;
+  }
+}
+
+/* 确保文档页面标题不被遮挡 */
+.VPDoc h1:first-child {
+  margin-top: 0;
+  padding-top: 8px;
+}
+
+/* 修复侧边栏遮挡底部导航的问题 */
+.VPDoc {
+  position: relative;
+  z-index: 1;
+}
+
+/* 确保文档内容和底部导航有足够的左边距，避免被侧边栏遮挡 */
+@media (min-width: 960px) {
+  .Layout:has(.VPSidebar) .VPDoc,
+  .VPContent.has-sidebar .VPDoc {
+    margin-left: 0 !important;
+    padding-left: 48px !important;
+  }
+  
+  /* 确保底部导航也有相同的左边距 */
+  .Layout:has(.VPSidebar) .VPDocFooter,
+  .VPContent.has-sidebar .VPDocFooter {
+    padding-left: 48px !important;
+  }
+}
+
+/* 移动端保持原有样式 */
+@media (max-width: 959px) {
+  .VPDoc,
+  .VPDocFooter {
+    margin-left: 0 !important;
+    padding-left: 24px !important;
+  }
+}

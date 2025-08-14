@@ -1,0 +1,41 @@
+{
+  "name": "lifelog-website",
+  "version": "1.0.0",
+  "description": "人生笔记官网 - 统一VitePress架构",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "build:prod": "NODE_ENV=production vitepress build",
+    "preview": "vitepress preview",
+    "serve": "vitepress serve",
+    "clean": "rm -rf dist .vitepress/cache",
+    "build:clean": "npm run clean && npm run build:prod",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "test:e2e": "playwright test"
+  },
+  "keywords": [
+    "lifelog",
+    "diary",
+    "journal",
+    "app"
+  ],
+  "author": "Allen",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "@vitest/ui": "^3.2.4",
+    "@vue/test-utils": "^2.4.6",
+    "happy-dom": "^17.6.1",
+    "jsdom": "^26.1.0",
+    "playwright": "^1.54.2",
+    "terser": "^5.24.0",
+    "vitepress": "^1.0.0-rc.31",
+    "vitest": "^3.2.4",
+    "vue": "^3.3.8"
+  }
+}

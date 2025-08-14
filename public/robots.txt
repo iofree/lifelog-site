@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+
+# 主要页面
+Allow: /
+Allow: /en/
+Allow: /docs/
+Allow: /en/docs/
+
+# 静态资源
+Allow: /assets/
+Allow: *.css
+Allow: *.js
+Allow: *.png
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.gif
+Allow: *.svg
+Allow: *.webp
+
+# 禁止访问的目录
+Disallow: /node_modules/
+Disallow: /.vitepress/
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /dist/
+
+# Sitemap位置
+Sitemap: https://lifelog.iofree.xyz/sitemap.xml
