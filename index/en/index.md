@@ -45,7 +45,6 @@ import { screenshotsConfig } from '../../config/screenshots.js'
   text="Record your life with text, images, videos, and audio"
   tagline="Capture every beautiful moment of your life"
   downloadLink="/en/docs/download"
-  learnMoreLink="/en/"
 />
 
 <FeatureGalleryEn :screenshots="screenshotsConfig.en" />

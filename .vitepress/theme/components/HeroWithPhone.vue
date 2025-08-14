@@ -47,9 +47,6 @@
               </div>
             </div>
           </a>
-          <a :href="learnMoreLink" class="hero-btn secondary">
-            <span>了解更多</span>
-          </a>
         </div>
       </div>
       
@@ -82,10 +79,6 @@ defineProps({
     required: true
   },
   downloadLink: {
-    type: String,
-    required: true
-  },
-  learnMoreLink: {
     type: String,
     required: true
   }
@@ -226,23 +219,7 @@ defineProps({
   color: white !important;
 }
 
-.hero-btn.secondary {
-  background: var(--vp-c-bg-soft);
-  border: 1px solid var(--vp-c-border);
-  color: var(--vp-c-text-1);
-  padding: 8px 16px;
-  font-size: 0.85rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-}
 
-.hero-btn.secondary:hover {
-  background: var(--vp-c-bg-mute);
-  border-color: var(--vp-c-brand);
-  transform: translateY(-1px);
-}
 
 .btn-content {
   display: flex;
@@ -371,13 +348,7 @@ defineProps({
     align-items: center;
   }
   
-  .hero-btn.secondary {
-    padding: 6px 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-  }
+
   
   .phone-mockup {
     width: 280px;
