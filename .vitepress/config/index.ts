@@ -111,6 +111,10 @@ export default defineConfig({
   cacheDir: '.vitepress/cache',
   cleanUrls: true,
   
+  // 排除不需要构建的文件
+  srcExclude: ['README.md', 'SEO_SUMMARY.md'],
+
+  
   // 构建优化
   vite: {
     build: {
