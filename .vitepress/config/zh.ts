@@ -17,10 +17,12 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
     siteTitle: '人生笔记',
     nav: [
       { text: '下载', link: '/docs/download' },
-      { text: '文档', link: '/docs/qa' },
-      { text: '隐私政策', link: '/privacy' },
-      { text: '使用条款', link: '/terms' }
+      { text: '文档', link: '/docs/qa' }
     ],
+
+    footer: {
+      message: '<a href="/privacy">隐私政策</a> | <a href="/terms">使用条款</a>'
+    },
 
     sidebar: {
       '/docs/': [

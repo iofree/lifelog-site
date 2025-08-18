@@ -17,10 +17,12 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
     siteTitle: 'Lifelog Note',
     nav: [
       { text: 'Download', link: '/en/docs/download' },
-      { text: 'Docs', link: '/en/docs/qa' },
-      { text: 'Privacy Policy', link: '/en/privacy' },
-      { text: 'Terms of Service', link: '/en/terms' }
+      { text: 'Docs', link: '/en/docs/qa' }
     ],
+
+    footer: {
+      message: '<a href="/en/privacy">Privacy Policy</a> | <a href="/en/terms">Terms of Service</a>'
+    },
 
     sidebar: {
       '/en/docs/': [
