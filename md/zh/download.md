@@ -8,7 +8,7 @@ outline: deep
 
 直接从 App Store 下载：
 
-<a href="https://apps.apple.com/app/id1625209452?platform=iphone" target="_blank" class="download-btn ios">
+<a href="https://apps.apple.com/cn/app/id1625209452?platform=iphone" target="_blank" class="download-btn ios">
   📱 App Store 下载
 </a>
 
