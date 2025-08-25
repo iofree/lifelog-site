@@ -44,7 +44,7 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
         {
           text: '数据备份',
           items: [
-            { text: '数据备份与迁移', link: '/md/zh/backup-and-migration' },
+            { text: '数据备份与迁移', link: '/docs/backup-and-migration' },
           ]
         },
         {

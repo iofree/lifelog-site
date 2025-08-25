@@ -44,7 +44,7 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
         {
           text: 'Data Backup',
           items: [
-            { text: 'Backup and Migration', link: '/md/en/backup-and-migration' }
+            { text: 'Backup and Migration', link: '/en/docs/backup-and-migration' }
           ]
         },
         {
