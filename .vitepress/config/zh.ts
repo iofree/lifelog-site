@@ -37,10 +37,9 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
           text: '功能介绍',
           items: [
             { text: '功能总览', link: '/docs/features' },
-            { text: '个性化设置', link: '/docs/settings' },,
+            { text: '个性化设置', link: '/docs/settings' },
             { text: '日记串', link: '/docs/thread' },
-            { text: '备份', link: '/docs/backup' },
-            { text: '换手机 数据迁移', link: '/docs/migrate-data' }
+            { text: '数据备份与迁移', link: '/md/zh/backup-and-migration' },
           ]
         },
         {
