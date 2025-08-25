@@ -17,7 +17,7 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
     siteTitle: 'Lifelog Note',
     nav: [
       { text: 'Download', link: '/en/docs/download' },
-      { text: 'Docs', link: '/en/docs/qa' }
+      { text: 'Docs', link: '/en/docs/features' }
     ],
 
     footer: {
@@ -36,16 +36,15 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
         {
           text: 'Features',
           items: [
-            { text: 'Rich Text', link: '/en/docs/rich-text' },
-            { text: 'Media Files', link: '/en/docs/medias' },
+            { text: 'Features Overview', link: '/en/docs/features' },
+            { text: 'Personalization Settings', link: '/en/docs/settings' },
             { text: 'Diary Thread', link: '/en/docs/thread' },
-            { text: 'Calendar View', link: '/en/docs/calendar' },
-            { text: 'On This Day', link: '/en/docs/today' },
-            { text: 'Data Export', link: '/en/docs/data' },
-            { text: 'Backup', link: '/en/docs/backup' },
-            { text: 'Search', link: '/en/docs/search' },
-            { text: 'PDF Export', link: '/en/docs/pdf' },
-            { text: 'Data Migration', link: '/en/docs/migrate-data' }
+          ]
+        },
+        {
+          text: 'Data Backup',
+          items: [
+            { text: 'Backup and Migration', link: '/md/en/backup-and-migration' }
           ]
         },
         {
