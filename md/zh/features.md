@@ -1,7 +1,34 @@
 ---
 outline: deep
+title: 功能特性
+description: 了解人生笔记的全部功能，包括富文本编辑、多媒体支持、隐私保护、数据管理等。
+keywords: 人生笔记功能,富文本编辑,多媒体日记,隐私日记,数据备份,数据迁移
 ---
 
+<script setup>
+import { ref } from 'vue';
+
+const articleData = ref({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "人生笔记功能特性",
+  "description": "了解人生笔记的全部功能，包括富文本编辑、多媒体支持、隐私保护、数据管理等。",
+  "author": {
+    "@type": "Organization",
+    "name": "人生笔记"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "人生笔记",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lifelog.iofree.xyz/assets/logo.png"
+    }
+  }
+});
+</script>
+
+<StructuredData :data="articleData" />
 
 # 功能介绍
 

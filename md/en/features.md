@@ -1,6 +1,34 @@
 ---
 outline: deep
+title: Features
+description: Discover all the features of Lifelog Note, including rich text editing, multimedia support, privacy protection, data management, and more.
+keywords: Lifelog Note features,rich text editor,multimedia diary,privacy journal,data backup,data migration
 ---
+
+<script setup>
+import { ref } from 'vue';
+
+const articleData = ref({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Lifelog Note Features",
+  "description": "Discover all the features of Lifelog Note, including rich text editing, multimedia support, privacy protection, data management, and more.",
+  "author": {
+    "@type": "Organization",
+    "name": "Lifelog Note"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lifelog Note",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lifelog.iofree.xyz/assets/logo.png"
+    }
+  }
+});
+</script>
+
+<StructuredData :data="articleData" />
 
 # Feature Introduction
 

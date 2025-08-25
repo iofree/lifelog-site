@@ -33,8 +33,11 @@ export function generateMetaDescription(content: string, maxLength: number = 160
 }
 
 // 生成关键词列表
-export function generateKeywords(keywords: string[]): string {
-  return keywords.join(',')
+export function generateKeywords(keywords: string[] | string): string {
+  if (Array.isArray(keywords)) {
+    return keywords.join(',')
+  }
+  return keywords
 }
 
 // 生成Open Graph标签
@@ -85,146 +88,30 @@ export function generateTwitterCardTags(meta: SEOMetaData): Array<[string, Recor
   return tags
 }
 
-// 生成结构化数据
-export function generateStructuredData(type: string, data: Record<string, any>): string {
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': type,
-    ...data
+// 主SEO应用函数
+export function applySeo(frontmatter: Record<string, any>, siteData: Record<string, any>): void {
+  const meta: SEOMetaData = {
+    title: frontmatter.title || siteData.title,
+    description: frontmatter.description || siteData.description,
+    keywords: frontmatter.keywords || '',
+    url: normalizeUrl(frontmatter.permalink || ''),
+    image: frontmatter.image || 'https://lifelog.iofree.xyz/assets/logo.png',
+    type: frontmatter.type || 'website'
   }
 
-  return JSON.stringify(structuredData, null, 2)
-}
+  const head = siteData.head || []
 
-// 生成文章结构化数据
-export function generateArticleStructuredData(meta: SEOMetaData & {
-  headline: string
-  datePublished?: string
-  dateModified?: string
-  wordCount?: number
-  author?: {
-    name: string
-    url?: string
-  }
-  publisher?: {
-    name: string
-    logo?: string
-  }
-}): string {
-  const data: Record<string, any> = {
-    headline: meta.headline,
-    description: meta.description,
-    image: meta.image,
-    datePublished: meta.datePublished,
-    dateModified: meta.dateModified || meta.datePublished
-  }
+  head.push(['title', {}, generatePageTitle(meta.title, siteData.title)])
+  head.push(['meta', { name: 'description', content: generateMetaDescription(meta.description) }])
+  head.push(['meta', { name: 'keywords', content: generateKeywords(meta.keywords) }])
 
-  if (meta.author) {
-    data.author = {
-      '@type': 'Person',
-      name: meta.author.name,
-      url: meta.author.url
-    }
-  }
+  const ogTags = generateOpenGraphTags(meta)
+  ogTags.forEach(tag => head.push(tag))
 
-  if (meta.publisher) {
-    data.publisher = {
-      '@type': 'Organization',
-      name: meta.publisher.name,
-      logo: meta.publisher.logo ? {
-        '@type': 'ImageObject',
-        url: meta.publisher.logo
-      } : undefined
-    }
-  }
+  const twitterTags = generateTwitterCardTags(meta)
+  twitterTags.forEach(tag => head.push(tag))
 
-  if (meta.wordCount) {
-    data.wordCount = meta.wordCount
-  }
-
-  return generateStructuredData('Article', data)
-}
-
-// 生成应用结构化数据
-export function generateAppStructuredData(appInfo: {
-  name: string
-  description: string
-  url: string
-  applicationCategory: string
-  operatingSystem: string[]
-  offers?: {
-    price: string
-    priceCurrency: string
-  }
-  author?: {
-    name: string
-  }
-  aggregateRating?: {
-    ratingValue: number
-    reviewCount: number
-  }
-  screenshot?: string[]
-  downloadUrl?: string[]
-}): string {
-  const data: Record<string, any> = {
-    name: appInfo.name,
-    description: appInfo.description,
-    url: appInfo.url,
-    applicationCategory: appInfo.applicationCategory,
-    operatingSystem: appInfo.operatingSystem
-  }
-
-  if (appInfo.offers) {
-    data.offers = {
-      '@type': 'Offer',
-      price: appInfo.offers.price,
-      priceCurrency: appInfo.offers.priceCurrency
-    }
-  }
-
-  if (appInfo.author) {
-    data.author = {
-      '@type': 'Person',
-      name: appInfo.author.name
-    }
-  }
-
-  if (appInfo.aggregateRating) {
-    data.aggregateRating = {
-      '@type': 'AggregateRating',
-      ratingValue: appInfo.aggregateRating.ratingValue,
-      reviewCount: appInfo.aggregateRating.reviewCount
-    }
-  }
-
-  if (appInfo.screenshot) {
-    data.screenshot = appInfo.screenshot
-  }
-
-  if (appInfo.downloadUrl) {
-    data.downloadUrl = appInfo.downloadUrl
-  }
-
-  return generateStructuredData('SoftwareApplication', data)
-}
-
-// 生成FAQ结构化数据
-export function generateFAQStructuredData(faqs: Array<{
-  question: string
-  answer: string
-}>): string {
-  const data = {
-    mainEntity: faqs.map(faq => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer
-      }
-    }))
-  }
-
-  return generateStructuredData('FAQPage', data)
+  siteData.head = head
 }
 
 // URL规范化
@@ -232,19 +119,4 @@ export function normalizeUrl(url: string, baseUrl: string = 'https://lifelog.iof
   if (url.startsWith('http')) return url
   if (url.startsWith('/')) return baseUrl + url
   return baseUrl + '/' + url
-}
-
-// 生成hreflang标签
-export function generateHreflangTags(currentPath: string, languages: Array<{
-  code: string
-  path: string
-}>): Array<[string, Record<string, string>]> {
-  return languages.map(lang => [
-    'link',
-    {
-      rel: 'alternate',
-      hreflang: lang.code,
-      href: normalizeUrl(lang.path)
-    }
-  ])
 }
