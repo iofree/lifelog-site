@@ -12,7 +12,6 @@ import FeaturesSectionEn from './components/FeaturesSectionEn.vue'
 import FeatureGallery from './components/FeatureGallery.vue'
 import FeatureGalleryEn from './components/FeatureGalleryEn.vue'
 import Breadcrumb from './components/Breadcrumb.vue'
-import StructuredData from './components/StructuredData.vue'
 
 export default {
   extends: DefaultTheme,
@@ -41,7 +40,6 @@ export default {
     app.component('FeatureGallery', FeatureGallery)
     app.component('FeatureGalleryEn', FeatureGalleryEn)
     app.component('Breadcrumb', Breadcrumb)
-    app.component('StructuredData', StructuredData)
 
     // 语言偏好记录和自动跳转
     if (typeof window !== 'undefined') {

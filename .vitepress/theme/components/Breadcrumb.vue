@@ -26,16 +26,12 @@
         </span>
       </li>
     </ol>
-    
-    <!-- 使用新的结构化数据组件 -->
-    <StructuredData :data="structuredDataObject" />
   </nav>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vitepress'
-import StructuredData from './StructuredData.vue'
 
 interface BreadcrumbItem {
   text: string
@@ -82,22 +78,6 @@ const breadcrumbs = computed<BreadcrumbItem[]>(() => {
   })
 
   return items
-})
-
-// 生成结构化数据对象
-const structuredDataObject = computed(() => {
-  const items = breadcrumbs.value.map((item, index) => ({
-    '@type': 'ListItem',
-    position: index + 1,
-    name: item.text,
-    item: `https://lifelog.iofree.xyz${item.url}`
-  }))
-
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: items
-  }
 })
 </script>
 
