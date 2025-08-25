@@ -36,6 +36,8 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
         {
           text: '功能介绍',
           items: [
+            { text: '功能总览', link: '/docs/features' },
+            { text: '个性化设置', link: '/docs/settings' },,
             { text: '富文本', link: '/docs/rich-text' },
             { text: '图片/实况/视频/录音', link: '/docs/medias' },
             { text: '日记串', link: '/docs/thread' },

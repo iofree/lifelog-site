@@ -36,6 +36,8 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
         {
           text: 'Features',
           items: [
+            { text: 'Features Overview', link: '/en/docs/features' },
+            { text: 'Personalization Settings', link: '/en/docs/settings' },
             { text: 'Rich Text', link: '/en/docs/rich-text' },
             { text: 'Media Files', link: '/en/docs/medias' },
             { text: 'Diary Thread', link: '/en/docs/thread' },
