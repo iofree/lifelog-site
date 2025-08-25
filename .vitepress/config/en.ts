@@ -38,15 +38,8 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
           items: [
             { text: 'Features Overview', link: '/en/docs/features' },
             { text: 'Personalization Settings', link: '/en/docs/settings' },
-            { text: 'Rich Text', link: '/en/docs/rich-text' },
-            { text: 'Media Files', link: '/en/docs/medias' },
             { text: 'Diary Thread', link: '/en/docs/thread' },
-            { text: 'Calendar View', link: '/en/docs/calendar' },
-            { text: 'On This Day', link: '/en/docs/today' },
-            { text: 'Data Export', link: '/en/docs/data' },
             { text: 'Backup', link: '/en/docs/backup' },
-            { text: 'Search', link: '/en/docs/search' },
-            { text: 'PDF Export', link: '/en/docs/pdf' },
             { text: 'Data Migration', link: '/en/docs/migrate-data' }
           ]
         },

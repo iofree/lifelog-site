@@ -38,15 +38,8 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
           items: [
             { text: '功能总览', link: '/docs/features' },
             { text: '个性化设置', link: '/docs/settings' },,
-            { text: '富文本', link: '/docs/rich-text' },
-            { text: '图片/实况/视频/录音', link: '/docs/medias' },
             { text: '日记串', link: '/docs/thread' },
-            { text: '日历视图', link: '/docs/calendar' },
-            { text: '那年今日', link: '/docs/today' },
-            { text: '数据导出', link: '/docs/data' },
             { text: '备份', link: '/docs/backup' },
-            { text: '搜索', link: '/docs/search' },
-            { text: 'PDF导出', link: '/docs/pdf' },
             { text: '换手机 数据迁移', link: '/docs/migrate-data' }
           ]
         },
