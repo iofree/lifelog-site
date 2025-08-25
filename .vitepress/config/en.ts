@@ -17,7 +17,7 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
     siteTitle: 'Lifelog Note',
     nav: [
       { text: 'Download', link: '/en/docs/download' },
-      { text: 'Docs', link: '/en/docs/qa' }
+      { text: 'Docs', link: '/en/docs/features' }
     ],
 
     footer: {

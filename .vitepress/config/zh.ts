@@ -17,7 +17,7 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
     siteTitle: '人生笔记',
     nav: [
       { text: '下载', link: '/docs/download' },
-      { text: '文档', link: '/docs/qa' }
+      { text: '文档', link: '/docs/features' }
     ],
 
     footer: {
