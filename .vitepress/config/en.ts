@@ -39,6 +39,11 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
             { text: 'Features Overview', link: '/en/docs/features' },
             { text: 'Personalization Settings', link: '/en/docs/settings' },
             { text: 'Diary Thread', link: '/en/docs/thread' },
+          ]
+        },
+        {
+          text: 'Data Backup',
+          items: [
             { text: 'Backup and Migration', link: '/md/en/backup-and-migration' }
           ]
         },
