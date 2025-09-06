@@ -45,6 +45,11 @@ Android now supports membership account system. Users can login with the email a
 ### iOS Membership Restoration
 For iOS membership, directly click "Restore Purchase" in the top right corner of the in-app membership page.
 
+To combat piracy, protect developer rights, and ensure optimal app maintenance, we verify your member App Store account.
+
+Membership privileges are linked to the Apple ID used for the original purchase. Please log in to the App Store using that Apple ID. Additionally, ensure the app was downloaded with this same account and that your account's region has not been switched. (If not, please switch back to the Apple ID used for the in-app purchase, redownload the app, then switch your account back to the region where the in-app purchase was made, and tap "Restore Purchases" again.)
+
+
 ### How to migrate membership after changing Android phones
 Android now supports membership account system. Users can login with the email address bound during previous redemption (emails bound with previous redemption codes don't have passwords set - for first login, click "Forgot Password" first, receive verification code via email to reset password, then login with account and password directly). If your previously entered email address can't receive verification codes, contact me via Alipay for troubleshooting.
 
