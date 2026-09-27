@@ -1,122 +1,108 @@
-// SEO工具函数
-export interface SEOMetaData {
-  title: string
-  description: string
-  keywords: string
-  image?: string
-  url?: string
-  type?: 'website' | 'article' | 'product'
-  author?: string
-  publishedTime?: string
-  modifiedTime?: string
+import type { HeadConfig, PageData } from 'vitepress'
+
+const siteUrl = 'https://lifelog.iofree.xyz'
+
+// relativePath 已经由 VitePress 应用 rewrites，不能再使用源 Markdown 路径。
+export function getPagePath(relativePath: string): string {
+  return '/' + relativePath.replace(/(^|\/)index\.md$/, '$1').replace(/\.md$/, '')
 }
 
-// 生成页面标题
-export function generatePageTitle(title: string, siteName: string = '人生笔记'): string {
-  if (title === siteName) return title
-  return `${title} - ${siteName}`
-}
+export function generatePageHead(page: PageData, pages: string[]): HeadConfig[] {
+  const path = getPagePath(page.relativePath)
+  const isEnglish = path.startsWith('/en/')
+  const isHome = path === '/' || path === '/en/'
+  const name = isEnglish ? 'Lifelog Note' : '人生笔记Real'
+  const shareImage = siteUrl + '/assets/social/' + (isEnglish ? 'en-US' : 'zh-CN') + '.png'
+  const shareImageAlt = isEnglish ? 'Lifelog Note — photo journal and diary threads' : '人生笔记Real — 照片日记与日记串'
+  const title = page.titleTemplate === false || page.title === name
+    ? page.title
+    : page.title + ' | ' + name
+  const url = siteUrl + path
+  const availablePaths = new Set(pages.map(getPagePath))
+  const chinesePath = isEnglish ? path.slice(3) : path
+  const englishPath = '/en' + chinesePath
+  const head: HeadConfig[] = (page.frontmatter.head || []).filter(([tag, attrs]: HeadConfig) => {
+    if (tag === 'link') return attrs.rel !== 'canonical' && !attrs.hreflang
+    if (tag === 'meta') return !attrs.property?.startsWith('og:') && !attrs.name?.startsWith('twitter:')
+    return true
+  })
 
-// 生成meta描述
-export function generateMetaDescription(content: string, maxLength: number = 160): string {
-  if (content.length <= maxLength) return content
-  
-  // 在最后一个完整单词处截断
-  const truncated = content.substring(0, maxLength)
-  const lastSpace = truncated.lastIndexOf(' ')
-  
-  if (lastSpace > maxLength * 0.8) {
-    return truncated.substring(0, lastSpace) + '...'
-  }
-  
-  return truncated + '...'
-}
-
-// 生成关键词列表
-export function generateKeywords(keywords: string[] | string): string {
-  if (Array.isArray(keywords)) {
-    return keywords.join(',')
-  }
-  return keywords
-}
-
-// 生成Open Graph标签
-export function generateOpenGraphTags(meta: SEOMetaData): Array<[string, Record<string, string>]> {
-  const tags: Array<[string, Record<string, string>]> = [
-    ['meta', { property: 'og:type', content: meta.type || 'website' }],
-    ['meta', { property: 'og:title', content: meta.title }],
-    ['meta', { property: 'og:description', content: meta.description }]
-  ]
-
-  if (meta.url) {
-    tags.push(['meta', { property: 'og:url', content: meta.url }])
+  if (path === '/404' || path === '/en/404') {
+    head.push(['meta', { name: 'robots', content: 'noindex,follow' }])
+    return head
   }
 
-  if (meta.image) {
-    tags.push(['meta', { property: 'og:image', content: meta.image }])
-    tags.push(['meta', { property: 'og:image:alt', content: meta.title }])
-  }
-
-  if (meta.author) {
-    tags.push(['meta', { property: 'article:author', content: meta.author }])
-  }
-
-  if (meta.publishedTime) {
-    tags.push(['meta', { property: 'article:published_time', content: meta.publishedTime }])
-  }
-
-  if (meta.modifiedTime) {
-    tags.push(['meta', { property: 'article:modified_time', content: meta.modifiedTime }])
-  }
-
-  return tags
-}
-
-// 生成Twitter Card标签
-export function generateTwitterCardTags(meta: SEOMetaData): Array<[string, Record<string, string>]> {
-  const tags: Array<[string, Record<string, string>]> = [
+  head.push(
+    ['meta', { name: 'robots', content: 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' }],
+    ['link', { rel: 'canonical', href: url }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:site_name', content: name }],
+    ['meta', { property: 'og:title', content: title }],
+    ['meta', { property: 'og:description', content: page.description }],
+    ['meta', { property: 'og:url', content: url }],
+    ['meta', { property: 'og:locale', content: isEnglish ? 'en_US' : 'zh_CN' }],
+    ['meta', { property: 'og:image', content: shareImage }],
+    ['meta', { property: 'og:image:width', content: '1200' }],
+    ['meta', { property: 'og:image:height', content: '630' }],
+    ['meta', { property: 'og:image:alt', content: shareImageAlt }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:title', content: meta.title }],
-    ['meta', { name: 'twitter:description', content: meta.description }]
+    ['meta', { name: 'twitter:image', content: shareImage }],
+    ['meta', { name: 'twitter:image:alt', content: shareImageAlt }],
+    ['meta', { name: 'twitter:title', content: title }],
+    ['meta', { name: 'twitter:description', content: page.description }]
+  )
+
+  for (const [lang, localePath] of [['zh-CN', chinesePath], ['en-US', englishPath]]) {
+    if (availablePaths.has(localePath)) {
+      head.push(['link', { rel: 'alternate', hreflang: lang, href: siteUrl + localePath }])
+    }
+  }
+  head.push(['link', {
+    rel: 'alternate',
+    hreflang: 'x-default',
+    href: siteUrl + (availablePaths.has(chinesePath) ? chinesePath : path)
+  }])
+
+  const jsonLd = (data: Record<string, unknown>): HeadConfig => [
+    'script',
+    { type: 'application/ld+json' },
+    JSON.stringify({ '@context': 'https://schema.org', ...data }).replace(/</g, '\\u003c')
   ]
 
-  if (meta.image) {
-    tags.push(['meta', { name: 'twitter:image', content: meta.image }])
-    tags.push(['meta', { name: 'twitter:image:alt', content: meta.title }])
+  if (isHome) {
+    head.push(jsonLd({
+      '@type': 'WebSite',
+      '@id': siteUrl + '/#website',
+      name: '人生笔记Real',
+      alternateName: 'Lifelog Note',
+      url: siteUrl + '/',
+      inLanguage: ['zh-CN', 'en-US']
+    }))
+    head.push(jsonLd({
+      '@type': 'SoftwareApplication',
+      '@id': siteUrl + '/#app',
+      name,
+      alternateName: isEnglish ? '人生笔记Real' : 'Lifelog Note',
+      url,
+      description: page.description,
+      applicationCategory: 'LifestyleApplication',
+      operatingSystem: ['iOS', 'Android'],
+      image: siteUrl + '/assets/logo.png',
+      identifier: '1625209452',
+      sameAs: ['https://apps.apple.com/cn/app/id1625209452', 'https://apps.apple.com/us/app/id1625209452']
+    }))
+  } else {
+    head.push(jsonLd({
+      '@type': 'WebPage',
+      '@id': url + '#webpage',
+      url,
+      name: page.title,
+      description: page.description,
+      inLanguage: isEnglish ? 'en-US' : 'zh-CN',
+      isPartOf: { '@id': siteUrl + '/#website' },
+      about: { '@id': siteUrl + '/#app' }
+    }))
   }
 
-  return tags
-}
-
-// 主SEO应用函数
-export function applySeo(frontmatter: Record<string, any>, siteData: Record<string, any>): void {
-  const meta: SEOMetaData = {
-    title: frontmatter.title || siteData.title,
-    description: frontmatter.description || siteData.description,
-    keywords: frontmatter.keywords || '',
-    url: normalizeUrl(frontmatter.permalink || ''),
-    image: frontmatter.image || 'https://lifelog.iofree.xyz/assets/logo.png',
-    type: frontmatter.type || 'website'
-  }
-
-  const head = siteData.head || []
-
-  head.push(['title', {}, generatePageTitle(meta.title, siteData.title)])
-  head.push(['meta', { name: 'description', content: generateMetaDescription(meta.description) }])
-  head.push(['meta', { name: 'keywords', content: generateKeywords(meta.keywords) }])
-
-  const ogTags = generateOpenGraphTags(meta)
-  ogTags.forEach(tag => head.push(tag))
-
-  const twitterTags = generateTwitterCardTags(meta)
-  twitterTags.forEach(tag => head.push(tag))
-
-  siteData.head = head
-}
-
-// URL规范化
-export function normalizeUrl(url: string, baseUrl: string = 'https://lifelog.iofree.xyz'): string {
-  if (url.startsWith('http')) return url
-  if (url.startsWith('/')) return baseUrl + url
-  return baseUrl + '/' + url
+  return head
 }

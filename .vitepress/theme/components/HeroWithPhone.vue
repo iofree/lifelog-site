@@ -10,40 +10,51 @@
           <div class="highlight-item">
             <div class="highlight-icon">📝</div>
             <div class="highlight-content">
-              <span class="highlight-title">富文本编辑</span>
-              <span class="highlight-desc">支持丰富的文本格式，让你的日记更加生动</span>
+              <a href="/docs/thread" class="highlight-title">日记串</a>
+              <span class="highlight-desc">把不同日期的相关记录，接成一个故事</span>
             </div>
           </div>
           <div class="highlight-item">
             <div class="highlight-icon">📸</div>
             <div class="highlight-content">
-              <span class="highlight-title">多媒体支持</span>
-              <span class="highlight-desc">图片、视频、录音，全方位记录生活</span>
+              <span class="highlight-title">实况、视频与录音</span>
+              <span class="highlight-desc">留住动作和声音，部分媒体功能需会员</span>
             </div>
           </div>
           <div class="highlight-item">
             <div class="highlight-icon">🔒</div>
             <div class="highlight-content">
-              <span class="highlight-title">数据安全</span>
-              <span class="highlight-desc">本地存储，数据完全由你掌控</span>
+              <a href="/docs/backup-and-migration" class="highlight-title">本地保存与备份</a>
+              <span class="highlight-desc">日记默认存在本机，可选择自己的云盘备份</span>
             </div>
           </div>
           <div class="highlight-item">
             <div class="highlight-icon">📅</div>
             <div class="highlight-content">
-              <span class="highlight-title">日历视图与照片墙</span>
-              <span class="highlight-desc">时间轴展示与图片集合浏览</span>
+              <span class="highlight-title">照片日历</span>
+              <span class="highlight-desc">在日历和时间线里，回看有记录的日子</span>
             </div>
           </div>
         </div>
         
+        <p class="hero-note">人生笔记Real 的英文名为 Lifelog Note。免费下载，部分功能需会员。</p>
+
         <div class="hero-actions">
           <a :href="downloadLink" class="hero-btn primary">
             <div class="btn-content">
               <span class="btn-icon">📱</span>
               <div class="btn-text">
-                <span class="btn-title">立即下载</span>
-                <span class="btn-subtitle">iOS & Android</span>
+                <span class="btn-title">App Store 下载</span>
+                <span class="btn-subtitle">iPhone 与 iPad</span>
+              </div>
+            </div>
+          </a>
+          <a href="/docs/download" class="hero-btn secondary">
+            <div class="btn-content">
+              <span class="btn-icon">🤖</span>
+              <div class="btn-text">
+                <span class="btn-title">Android 下载</span>
+                <span class="btn-subtitle">查看下载说明</span>
               </div>
             </div>
           </a>
@@ -53,11 +64,7 @@
       <div class="hero-phone">
         <div class="phone-mockup">
           <div class="phone-shadow"></div>
-          <img src="/assets/black.png" alt="Phone mockup" class="phone-frame" />
-          <div class="screen-content">
-            <img src="/assets/screenshot/main.png" alt="App screenshot" class="app-screenshot" />
-          </div>
-          <div class="phone-glow"></div>
+          <img :src="heroScreenshot.src" :alt="heroScreenshot.alt" :width="heroScreenshot.width" :height="heroScreenshot.height" class="phone-frame" fetchpriority="high" decoding="async" />
         </div>
       </div>
     </div>
@@ -65,6 +72,10 @@
 </template>
 
 <script setup>
+import { screenshotsConfig } from '../../../config/screenshots'
+
+const heroScreenshot = screenshotsConfig.zh[0]
+
 defineProps({
   name: {
     type: String,
@@ -182,6 +193,20 @@ defineProps({
   font-size: 1.1rem;
 }
 
+.hero-note {
+  margin-bottom: 20px;
+  font-size: 0.875rem;
+  color: var(--vp-c-text-2);
+}
+
+.hero-btn.secondary {
+  border: 1px solid var(--vp-c-border);
+}
+
+.hero-btn.secondary .btn-content {
+  color: var(--vp-c-text-1);
+}
+
 .hero-actions {
   display: flex;
   gap: 16px;
@@ -287,26 +312,6 @@ defineProps({
   display: block;
   position: relative;
   z-index: 2;
-}
-
-.screen-content {
-  position: absolute;
-  top: 5%;
-  left: 5%;
-  right: 5%;
-  bottom: 5%;
-  border-radius: 38px;
-  overflow: hidden;
-  z-index: 3;
-  background: #000;
-}
-
-.app-screenshot {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
 }
 
 @media (max-width: 768px) {

@@ -1,5 +1,6 @@
 ---
-title: Contact Us
+title: Contact and Feedback
+description: Contact the Lifelog Note developer for technical support, feature suggestions and feedback.
 ---
 
 # Contact Us

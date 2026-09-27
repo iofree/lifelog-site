@@ -4,10 +4,11 @@ import { enConfig } from './en'
 import { sitemapConfig } from './sitemap'
 import { generateAnalyticsScripts } from './analytics'
 import { generateRewrites } from './rewrites'
+import { generatePageHead } from '../utils/seo'
 
 export default defineConfig({
-  title: '人生笔记',
-  description: '用图文,视频,录音日记一生',
+  title: '人生笔记Real',
+  description: '用照片记录日常，用日记串把旅行、读书和成长接着记。日记默认保存在本机，支持自主备份。',
 
   // 多语言配置
   locales: {
@@ -28,11 +29,10 @@ export default defineConfig({
   // 基础配置
   head: [
     // Favicon和图标
-    ['link', { rel: 'icon', href: '/assets/logo.png' }],
-    ['link', { rel: 'apple-touch-icon', href: '/assets/logo.png' }],
-    ['link', { rel: 'shortcut icon', href: '/assets/logo.png' }],
-    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/assets/logo.png' }],
-    ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/assets/logo.png' }],
+    ['link', { rel: 'apple-touch-icon', href: '/assets/apple-touch-icon.png' }],
+    ['link', { rel: 'shortcut icon', href: '/assets/favicon-32x32.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/assets/favicon-32x32.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/assets/favicon-16x16.png' }],
 
     // 基础meta标签
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }],
@@ -44,35 +44,9 @@ export default defineConfig({
     // SEO核心标签
     ['meta', { name: 'keywords', content: '人生笔记,日记应用,生活记录,多媒体日记,lifelog,diary app,journal,life recording' }],
     ['meta', { name: 'author', content: 'Allen' }],
-    ['meta', { name: 'robots', content: 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' }],
-    ['meta', { name: 'googlebot', content: 'index,follow' }],
-    ['meta', { name: 'bingbot', content: 'index,follow' }],
-    ['meta', { name: 'language', content: 'zh-CN' }],
     ['meta', { name: 'revisit-after', content: '7 days' }],
     ['meta', { name: 'distribution', content: 'global' }],
     ['meta', { name: 'rating', content: 'general' }],
-
-    // Open Graph标签
-    ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:site_name', content: '人生笔记' }],
-    ['meta', { property: 'og:title', content: '人生笔记 - 用图文,视频,录音日记一生' }],
-    ['meta', { property: 'og:description', content: '人生笔记是一款功能强大的多媒体日记应用，支持图文、视频、录音等多种记录方式，帮助您记录生活的每一个美好瞬间。' }],
-    ['meta', { property: 'og:url', content: 'https://lifelog.iofree.xyz' }],
-    ['meta', { property: 'og:image', content: 'https://lifelog.iofree.xyz/assets/logo.png' }],
-    ['meta', { property: 'og:image:width', content: '1200' }],
-    ['meta', { property: 'og:image:height', content: '630' }],
-    ['meta', { property: 'og:image:alt', content: '人生笔记应用图标' }],
-    ['meta', { property: 'og:locale', content: 'zh_CN' }],
-    ['meta', { property: 'og:locale:alternate', content: 'en_US' }],
-
-    // Twitter Card标签
-    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:title', content: '人生笔记 - 用图文,视频,录音日记一生' }],
-    ['meta', { name: 'twitter:description', content: '人生笔记是一款功能强大的多媒体日记应用，支持图文、视频、录音等多种记录方式，帮助您记录生活的每一个美好瞬间。' }],
-    ['meta', { name: 'twitter:image', content: 'https://lifelog.iofree.xyz/assets/logo.png' }],
-    ['meta', { name: 'twitter:image:alt', content: '人生笔记应用图标' }],
-    ['meta', { name: 'twitter:site', content: '@lifelog_app' }],
-    ['meta', { name: 'twitter:creator', content: '@lifelog_app' }],
 
     // 移动端优化
     ['meta', { name: 'format-detection', content: 'telephone=no' }],
@@ -84,24 +58,10 @@ export default defineConfig({
     ['meta', { name: 'mobile-web-app-capable', content: 'yes' }],
 
     // 预加载关键资源
-    ['link', { rel: 'preload', href: '/assets/logo.png', as: 'image' }],
-    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
-    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+    ['link', { rel: 'preload', href: '/assets/icon-192x192.png', as: 'image' }],
 
     // 规范链接和PWA
-    ['link', { rel: 'canonical', href: 'https://lifelog.iofree.xyz' }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
-
-    // 结构化数据 - 网站信息
-    ['script', { type: 'application/ld+json' }, JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "人生笔记",
-      "alternateName": "Lifelog Note",
-      "url": "https://lifelog.iofree.xyz",
-      "description": "人生笔记官方网站 - 用图文,视频,录音日记一生",
-      "inLanguage": ["zh-CN", "en-US"]
-    })],
 
     // 分析工具脚本（仅在生产环境加载）
     ...generateAnalyticsScripts()
@@ -129,6 +89,12 @@ export default defineConfig({
     assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg', '**/*.webp']
   },
 
+  // 在构建时生成页面元数据，同时供客户端路由切换使用
+  transformPageData(pageData, { siteConfig }) {
+    const pages = siteConfig.pages.map(page => siteConfig.rewrites.map[page] || page)
+    pageData.frontmatter.head = generatePageHead(pageData, pages)
+  },
+
   // SEO配置
   sitemap: {
     hostname: sitemapConfig.hostname,
@@ -137,7 +103,7 @@ export default defineConfig({
 
   // 主题配置
   themeConfig: {
-    logo: '/assets/logo.png',
+    logo: '/assets/icon-192x192.png',
 
     // 搜索配置
     search: {

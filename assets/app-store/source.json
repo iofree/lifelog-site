@@ -1,0 +1,303 @@
+{
+  "appStoreId": "1625209452",
+  "fetchedAt": "2026-09-26T03:22:27+00:00",
+  "sourceSelection": "Current default iPhone screenshot gallery (product_media_phone_) in each public App Store web page, preserving storefront order. Lookup screenshotUrls are a different device set and are recorded for comparison only.",
+  "locales": {
+    "zh-CN": {
+      "storefront": "cn",
+      "pageUrl": "https://apps.apple.com/cn/app/id1625209452",
+      "fetchedAt": "2026-09-26T03:17:48+00:00",
+      "version": "1.22.16",
+      "currentVersionReleaseDate": "2026-09-20T16:46:20Z",
+      "device": "iPhone (default public web gallery)",
+      "mediaType": "iphone_d74",
+      "lookupComparison": {
+        "url": "https://itunes.apple.com/lookup?id=1625209452&country=cn",
+        "screenshotCount": 10,
+        "device": "iPhone 8 Plus (device named in Apple source filenames)",
+        "thumbnailSize": "392x696",
+        "screenshotUrls": [
+          "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8a/b1/b4/8ab1b4bc-0e3f-70cc-9ec6-74e752c5dc7d/a802db09-c002-4ef8-ba10-52cacb921ea3_Apple_iPhone_8_Plus_Screenshot_0.png/392x696bb.png",
+          "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2c/e7/d2/2ce7d2d5-49db-2ef2-ca63-67dfb1096970/b2423200-4c3e-4f5a-bdd3-78f59da2143f_Apple_iPhone_8_Plus_Screenshot_1.png/392x696bb.png",
+          "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/b1/e1/5b/b1e15b61-441c-0f2d-434a-1b378e8184c8/e99c99ce-f070-4b47-8092-9f6f1e6df4b3_Apple_iPhone_8_Plus_Screenshot_2.png/392x696bb.png",
+          "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f7/66/64/f7666491-85ea-ae3c-028b-84bbe151507f/767f7ce9-1ac2-4868-812c-c87888181c0d_Apple_iPhone_8_Plus_Screenshot_8.png/392x696bb.png",
+          "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/79/46/a2/7946a242-b5ba-5f93-48e5-8e5e1e781237/e12a7a72-fa1d-4312-a137-a694ba98bc5f_Apple_iPhone_8_Plus_Screenshot_9.png/392x696bb.png",
+          "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a6/7e/f9/a67ef98c-a7e4-d83c-6e69-e4869efc2703/9c77cf33-49d9-41be-8071-d16337fe520a_Apple_iPhone_8_Plus_Screenshot_4.png/392x696bb.png",
+          "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7d/ac/d2/7dacd219-b1c9-8349-d4e6-69214e1ef32c/9daeec08-bf74-4185-bf79-9996f1b898fa_Apple_iPhone_8_Plus_Screenshot_6.png/392x696bb.png",
+          "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7f/8e/0e/7f8e0ea5-329d-bc1f-f14e-d7d1e49569e5/fa228a4e-d9ba-4b78-8376-aa036ffe79a8_Apple_iPhone_8_Plus_Screenshot_3.png/392x696bb.png",
+          "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/b2/a6/5d/b2a65d78-18b0-b9ed-1f93-79b2c402b14a/8111322b-cf16-46de-817f-15d9ab3f11b8_Apple_iPhone_8_Plus_Screenshot_7.png/392x696bb.png",
+          "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f6/4f/c8/f64fc8dd-5c13-b5e6-24ce-3861adc297f8/1f3d673c-27d9-4c1c-8c4f-e752fa2e0d2d_Apple_iPhone_8_Plus_Screenshot_5.png/392x696bb.png"
+        ]
+      },
+      "screenshots": [
+        {
+          "order": 1,
+          "file": "zh-CN/01.webp",
+          "alt": "人生笔记照片日历：按日期展示照片，并在下方浏览当天的图文日记",
+          "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/46/0f/ae/460faef2-17d4-7fcb-d7f6-a8e9601e4926/01.png/1320x2868bb.png",
+          "sourceTemplate": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/46/0f/ae/460faef2-17d4-7fcb-d7f6-a8e9601e4926/01.png/{w}x{h}{c}.{f}",
+          "original": {
+            "width": 1320,
+            "height": 2868,
+            "bytes": 3246515,
+            "sha256": "207126fd11df086485ef4a3a363d1784001b27cbe176e40bdf42dc4e03e5b25f"
+          },
+          "delivery": {
+            "width": 880,
+            "height": 1912,
+            "bytes": 199990,
+            "sha256": "09874dd07781c5babbb890a23c2f9f1ebf5c4b1e00973e2d8d5d776554f5367a",
+            "format": "webp",
+            "quality": 90,
+            "scale": "2/3, Lanczos resampling; no crop"
+          }
+        },
+        {
+          "order": 2,
+          "file": "zh-CN/02.webp",
+          "alt": "图文混排日记：在文字之间插入实况照片、视频和录音，评论也可添加图片",
+          "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7b/ef/a7/7befa70d-d0ce-9f2a-1306-81609b8539ae/03.png/1320x2868bb.png",
+          "sourceTemplate": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7b/ef/a7/7befa70d-d0ce-9f2a-1306-81609b8539ae/03.png/{w}x{h}{c}.{f}",
+          "original": {
+            "width": 1320,
+            "height": 2868,
+            "bytes": 1423762,
+            "sha256": "cfe49b227d8b6a98829630264715e44c22e7668e9fde2d81ab56d828b6bdf8c2"
+          },
+          "delivery": {
+            "width": 880,
+            "height": 1912,
+            "bytes": 102350,
+            "sha256": "e7d3c4a4803edea1de3d5d3f4ad8ebb5e89dc0afed52048e0fc0d2a9dcc837d7",
+            "format": "webp",
+            "quality": 90,
+            "scale": "2/3, Lanczos resampling; no crop"
+          }
+        },
+        {
+          "order": 3,
+          "file": "zh-CN/03.webp",
+          "alt": "日记串列表：将相关记录分组，展示每个日记串的日期范围和封面",
+          "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3f/58/93/3f5893cf-d738-4372-4e11-6d6d9e417f08/02.png/1320x2868bb.png",
+          "sourceTemplate": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3f/58/93/3f5893cf-d738-4372-4e11-6d6d9e417f08/02.png/{w}x{h}{c}.{f}",
+          "original": {
+            "width": 1320,
+            "height": 2868,
+            "bytes": 2030196,
+            "sha256": "2d33540a6fc3356b14622ccf3f3e704cbbf378018a908b2d1cd1b959bd8b91dd"
+          },
+          "delivery": {
+            "width": 880,
+            "height": 1912,
+            "bytes": 98484,
+            "sha256": "2b42e18feffb60b1251068c74ba79656973153272cfd3985f4b2fe9ab7660a5b",
+            "format": "webp",
+            "quality": 90,
+            "scale": "2/3, Lanczos resampling; no crop"
+          }
+        },
+        {
+          "order": 4,
+          "file": "zh-CN/04.webp",
+          "alt": "字数统计：查看总字数、平均日字数、记录天数和写作热力图",
+          "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/40/a1/50/40a15049-ae62-53b6-9175-975d47afccf2/05.png/1320x2868bb.png",
+          "sourceTemplate": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/40/a1/50/40a15049-ae62-53b6-9175-975d47afccf2/05.png/{w}x{h}{c}.{f}",
+          "original": {
+            "width": 1320,
+            "height": 2868,
+            "bytes": 565971,
+            "sha256": "851088b1e3c578186ae37491290b1dc6ba6c8ffe1e08c55e11bc887e06fd0f06"
+          },
+          "delivery": {
+            "width": 880,
+            "height": 1912,
+            "bytes": 50554,
+            "sha256": "11a9736793bcf0bf60d4af61fd8e9de26f36932eee35b8a81028b0f6694bcea8",
+            "format": "webp",
+            "quality": 90,
+            "scale": "2/3, Lanczos resampling; no crop"
+          }
+        },
+        {
+          "order": 5,
+          "file": "zh-CN/05.webp",
+          "alt": "随机回忆卡片：用照片、文字和日期回顾过去的日记",
+          "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8d/70/a0/8d70a04f-13ff-b45f-9296-e7788ce936c3/04.png/1320x2868bb.png",
+          "sourceTemplate": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8d/70/a0/8d70a04f-13ff-b45f-9296-e7788ce936c3/04.png/{w}x{h}{c}.{f}",
+          "original": {
+            "width": 1320,
+            "height": 2868,
+            "bytes": 1719769,
+            "sha256": "99d234f7280738e5ce101d040d10ad22e13fb95f348ca889979a4fda9e74c3a2"
+          },
+          "delivery": {
+            "width": 880,
+            "height": 1912,
+            "bytes": 97964,
+            "sha256": "11a28429bfff8b28e2ae0b9c83c732d739b8a36fd1f53e5425e5283f6f1ff8ff",
+            "format": "webp",
+            "quality": 90,
+            "scale": "2/3, Lanczos resampling; no crop"
+          }
+        }
+      ]
+    },
+    "en-US": {
+      "storefront": "us",
+      "pageUrl": "https://apps.apple.com/us/app/id1625209452",
+      "fetchedAt": "2026-09-26T03:17:46+00:00",
+      "version": "1.22.16",
+      "currentVersionReleaseDate": "2026-09-20T16:46:20Z",
+      "device": "iPhone 11 Pro Max (device named in Apple source filenames)",
+      "mediaType": "iphone_6_5",
+      "lookupComparison": {
+        "url": "https://itunes.apple.com/lookup?id=1625209452&country=us",
+        "screenshotCount": 6,
+        "device": "iPhone 8 Plus (device named in Apple source filenames)",
+        "thumbnailSize": "392x696",
+        "screenshotUrls": [
+          "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/df/4d/35/df4d35fb-448f-6f72-33b5-4940879bbfa6/175fffb3-e014-4e1a-af1d-bc9c7f58e334_Apple_iPhone_8_Plus_Screenshot_0.png/392x696bb.png",
+          "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c1/d2/31/c1d231f8-9122-3756-966f-1cbd24e2141d/6d60790d-26e4-4be0-a63f-c498f4d38ff4_Apple_iPhone_8_Plus_Screenshot_1.png/392x696bb.png",
+          "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bf/1a/b7/bf1ab731-2acd-641b-4da1-637916d64c7d/98640d73-206d-406e-83c2-b14de761a43c_Apple_iPhone_8_Plus_Screenshot_5.png/392x696bb.png",
+          "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/27/1b/70/271b70ec-6a7b-2f0b-4151-ad73defa67cd/b4b64164-a47d-4d71-a9c6-206ad2e38616_Apple_iPhone_8_Plus_Screenshot_3.png/392x696bb.png",
+          "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/18/2f/bc/182fbcfd-3cc9-b083-c5ae-99d875967c71/d02663ec-2ebc-4d78-b181-5b1c4484c3fc_Apple_iPhone_8_Plus_Screenshot_4.png/392x696bb.png",
+          "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7e/92/11/7e9211db-d1e0-16cd-4afa-761eb1e666ba/aceb133b-1318-40c8-92c4-b3c99fe649d3_Apple_iPhone_8_Plus_Screenshot_2.png/392x696bb.png"
+        ]
+      },
+      "screenshots": [
+        {
+          "order": 1,
+          "file": "en-US/01.webp",
+          "alt": "Photo calendar with daily photo thumbnails and the selected day’s journal entry",
+          "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4a/a7/38/4aa738cf-c0ea-b2b8-00e1-46129391b5cd/6ca8329b-a76b-4d59-9646-60b18f56dab5_Apple_iPhone_11_Pro_Max_Screenshot_0.png/1242x2688bb.png",
+          "sourceTemplate": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4a/a7/38/4aa738cf-c0ea-b2b8-00e1-46129391b5cd/6ca8329b-a76b-4d59-9646-60b18f56dab5_Apple_iPhone_11_Pro_Max_Screenshot_0.png/{w}x{h}{c}.{f}",
+          "original": {
+            "width": 1242,
+            "height": 2688,
+            "bytes": 3141729,
+            "sha256": "35289c5a52ba44abeb7ec53a853005a42d9da90af68a0183b420a7071764f703"
+          },
+          "delivery": {
+            "width": 828,
+            "height": 1792,
+            "bytes": 144692,
+            "sha256": "5df64a19e6da3fba67c46ad1ca3f06523d6e4c9ba9b52945a842a25dca731404",
+            "format": "webp",
+            "quality": 90,
+            "scale": "2/3, Lanczos resampling; no crop"
+          }
+        },
+        {
+          "order": 2,
+          "file": "en-US/02.webp",
+          "alt": "Timeline of journal entries with text, photo grids, dates, locations, and tags",
+          "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6c/78/ff/6c78ffdb-e913-600e-e38a-78580d2d203c/c9a17315-9b20-4bb8-9579-25094f9c4ef7_Apple_iPhone_11_Pro_Max_Screenshot_1.png/1242x2688bb.png",
+          "sourceTemplate": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6c/78/ff/6c78ffdb-e913-600e-e38a-78580d2d203c/c9a17315-9b20-4bb8-9579-25094f9c4ef7_Apple_iPhone_11_Pro_Max_Screenshot_1.png/{w}x{h}{c}.{f}",
+          "original": {
+            "width": 1242,
+            "height": 2688,
+            "bytes": 3081823,
+            "sha256": "6aff4a73910529d8e88ecd3b8d2e2d955f1fee0038ae5c89f25e74985d98e505"
+          },
+          "delivery": {
+            "width": 828,
+            "height": 1792,
+            "bytes": 167878,
+            "sha256": "921e130ddf48c579902b3331a266a6458f73d55a47079781e86ada027c0d727a",
+            "format": "webp",
+            "quality": 90,
+            "scale": "2/3, Lanczos resampling; no crop"
+          }
+        },
+        {
+          "order": 3,
+          "file": "en-US/03.webp",
+          "alt": "Random memory card showing a basketball photo and a fitness journal entry",
+          "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c0/ef/9a/c0ef9a7f-2db0-7af4-e9dc-4e5cafc4b385/4a8a945f-dc51-4057-bb1d-c021ea4cf42d_Apple_iPhone_11_Pro_Max_Screenshot_5.png/1242x2688bb.png",
+          "sourceTemplate": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c0/ef/9a/c0ef9a7f-2db0-7af4-e9dc-4e5cafc4b385/4a8a945f-dc51-4057-bb1d-c021ea4cf42d_Apple_iPhone_11_Pro_Max_Screenshot_5.png/{w}x{h}{c}.{f}",
+          "original": {
+            "width": 1242,
+            "height": 2688,
+            "bytes": 2467639,
+            "sha256": "a5b2d8b9211786ac1c5faeb4e33af38f696817db9531ae7d6680f105371c4a16"
+          },
+          "delivery": {
+            "width": 828,
+            "height": 1792,
+            "bytes": 64884,
+            "sha256": "283f24c53195339a1416d01f1c99c30058f4f150f3bbd0d0bfee934465ae1ba5",
+            "format": "webp",
+            "quality": 90,
+            "scale": "2/3, Lanczos resampling; no crop"
+          }
+        },
+        {
+          "order": 4,
+          "file": "en-US/04.webp",
+          "alt": "Diary Thread list with cover photos and date ranges for related entries",
+          "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c8/19/14/c81914fa-ef75-23b9-0753-655284eccc82/75735ab7-68ad-43d7-8ab8-cba2b006a85d_Apple_iPhone_11_Pro_Max_Screenshot_3.png/1242x2688bb.png",
+          "sourceTemplate": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c8/19/14/c81914fa-ef75-23b9-0753-655284eccc82/75735ab7-68ad-43d7-8ab8-cba2b006a85d_Apple_iPhone_11_Pro_Max_Screenshot_3.png/{w}x{h}{c}.{f}",
+          "original": {
+            "width": 1242,
+            "height": 2688,
+            "bytes": 1762139,
+            "sha256": "10b94a6158139c44c786ff56019ed770971ec3c92b7b888c7e5080aeee437449"
+          },
+          "delivery": {
+            "width": 828,
+            "height": 1792,
+            "bytes": 39890,
+            "sha256": "b899daac213e7a7b442fb6e1edbcdd49c3b3723d2c37e31f6d6e0217037a35c4",
+            "format": "webp",
+            "quality": 90,
+            "scale": "2/3, Lanczos resampling; no crop"
+          }
+        },
+        {
+          "order": 5,
+          "file": "en-US/05.webp",
+          "alt": "Diary Thread timeline showing connected entries with text, photos, and an option to add a new entry",
+          "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/70/d7/a4/70d7a4ea-abc1-0681-114c-62c6d4d8f7c4/e1bc7f21-3077-4b3b-affd-9dff6b8a1a02_Apple_iPhone_11_Pro_Max_Screenshot_4.png/1242x2688bb.png",
+          "sourceTemplate": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/70/d7/a4/70d7a4ea-abc1-0681-114c-62c6d4d8f7c4/e1bc7f21-3077-4b3b-affd-9dff6b8a1a02_Apple_iPhone_11_Pro_Max_Screenshot_4.png/{w}x{h}{c}.{f}",
+          "original": {
+            "width": 1242,
+            "height": 2688,
+            "bytes": 2204558,
+            "sha256": "696f2d05e360de8019142e440834b395d2d42581ad9c1e9b0ab5726598a4582b"
+          },
+          "delivery": {
+            "width": 828,
+            "height": 1792,
+            "bytes": 99850,
+            "sha256": "3ced1e0ef433a7501cbb758374f0a50dde44399f2b7fdcf82c7d6d7eb7a33a49",
+            "format": "webp",
+            "quality": 90,
+            "scale": "2/3, Lanczos resampling; no crop"
+          }
+        },
+        {
+          "order": 6,
+          "file": "en-US/06.webp",
+          "alt": "Random memory card showing a park photo and a travel journal entry",
+          "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d6/67/dd/d667dd26-69ea-73f6-90ee-32169088a5a7/13b688c7-a760-4b89-af84-b3f58c3646d6_Apple_iPhone_11_Pro_Max_Screenshot_2.png/1242x2688bb.png",
+          "sourceTemplate": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d6/67/dd/d667dd26-69ea-73f6-90ee-32169088a5a7/13b688c7-a760-4b89-af84-b3f58c3646d6_Apple_iPhone_11_Pro_Max_Screenshot_2.png/{w}x{h}{c}.{f}",
+          "original": {
+            "width": 1242,
+            "height": 2688,
+            "bytes": 3031724,
+            "sha256": "904f83b33b73a901fde07d84795db2662813dc1a84bfe2c9c11e808951f79dc5"
+          },
+          "delivery": {
+            "width": 828,
+            "height": 1792,
+            "bytes": 121458,
+            "sha256": "8e05a25cf83e04d7063012308cc3bab380fceab7b0694586d0579aaaf8637851",
+            "format": "webp",
+            "quality": 90,
+            "scale": "2/3, Lanczos resampling; no crop"
+          }
+        }
+      ]
+    }
+  }
+}

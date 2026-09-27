@@ -7,7 +7,7 @@
           :key="index"
           class="screenshot-item"
         >
-          <img :src="screenshot.src" :alt="screenshot.alt" />
+          <img :src="screenshot.src" :alt="screenshot.alt" :width="screenshot.width" :height="screenshot.height" loading="lazy" decoding="async" />
         </div>
       </div>
     </div>
@@ -15,7 +15,8 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
+import { screenshotsConfig } from '../../../config/screenshots'
 
 const props = defineProps({
   screenshots: {
@@ -30,15 +31,7 @@ const displayScreenshots = computed(() => {
     return props.screenshots
   }
   
-  // 默认配置：自动生成1-10的截图
-  const defaultScreenshots = []
-  for (let i = 1; i <= 10; i++) {
-    defaultScreenshots.push({
-      src: `/assets/img/${i}.png`,
-      alt: `功能截图 ${i}`
-    })
-  }
-  return defaultScreenshots
+  return screenshotsConfig.zh
 })
 </script>
 

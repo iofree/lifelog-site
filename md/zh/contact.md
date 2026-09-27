@@ -1,5 +1,7 @@
 ---
 outline: deep
+title: 联系与反馈
+description: 联系人生笔记Real 开发者，反馈使用问题、提出功能建议，了解 iOS 会员恢复与反馈所需的信息。
 ---
 
 # 如何联系我们

@@ -1,16 +1,15 @@
 import { DefaultTheme, LocaleSpecificConfig } from 'vitepress'
 
 export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
-  title: 'Lifelog Note - Record Your Life with Multimedia Diary',
-  description: 'Lifelog Note is a powerful multimedia diary app that supports rich text editing, photos, videos, audio recording, calendar view, data export and more. Capture every beautiful moment of your life. Free download for iOS and Android.',
+  title: 'Lifelog Note',
+  description: 'Keep a photo journal, connect related entries with diary threads, and revisit your memories. Entries are stored locally by default, with optional backups.',
   
   head: [
+    // locale head 会保留在客户端，确保 404 与普通页切换时正确更新。
+    ['meta', { name: 'robots', content: 'noindex,follow' }],
     // 英文页面特定的SEO标签
     ['meta', { name: 'keywords', content: 'lifelog,diary app,journal,life recording,personal diary,multimedia diary,photo diary,video diary,audio diary,life journal,diary software,digital diary,electronic diary,mobile diary,free diary app,private diary' }],
     ['meta', { property: 'og:locale', content: 'en_US' }],
-    ['link', { rel: 'alternate', hreflang: 'zh', href: 'https://lifelog.iofree.xyz/' }],
-    ['link', { rel: 'alternate', hreflang: 'en', href: 'https://lifelog.iofree.xyz/en/' }],
-    ['link', { rel: 'alternate', hreflang: 'x-default', href: 'https://lifelog.iofree.xyz/' }]
   ],
 
   themeConfig: {
@@ -30,6 +29,7 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
           text: 'User Guide',
           items: [
             { text: 'FAQ', link: '/en/docs/qa' },
+            { text: 'Public Release Notes', link: '/en/docs/changelog' },
             { text: 'Contact Us', link: '/en/docs/contact' }
           ]
         },
@@ -39,6 +39,13 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
             { text: 'Features Overview', link: '/en/docs/features' },
             { text: 'Personalization Settings', link: '/en/docs/settings' },
             { text: 'Diary Thread', link: '/en/docs/thread' },
+          ]
+        },
+        {
+          text: 'Ways to Journal',
+          items: [
+            { text: 'Travel Journal', link: '/en/docs/travel-journal' },
+            { text: 'Reading Journal', link: '/en/docs/reading-journal' },
           ]
         },
         {

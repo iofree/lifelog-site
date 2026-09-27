@@ -1,19 +1,9 @@
 ---
 layout: page
-title: 人生笔记 - 用图文,视频,录音日记一生 | 免费多媒体日记应用
-description: 人生笔记是一款功能强大的免费多媒体日记应用，支持富文本编辑、图片视频录音、日历视图、数据导出、云同步备份等功能。记录生活的每一个美好瞬间，支持iOS和Android免费下载。
+titleTemplate: false
+title: 人生笔记Real｜照片日记、日记串与本地生活记录
+description: 用照片和文字记录日常，用日记串把旅行、读书和成长接着记。人生笔记Real 默认将日记保存在本机，支持自主备份。提供 iOS 与 Android 下载，部分功能需会员。
 keywords: 人生笔记,日记应用,生活记录,多媒体日记,免费日记应用,手机日记,iOS日记应用,Android日记软件,个人日记,私人日记,电子日记
-head:
-  - - script
-    - type: application/ld+json
-    - innerHTML: |
-        {
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "url": "https://lifelog.iofree.xyz/zh/",
-          "name": "人生笔记",
-          "description": "一款美丽、注重隐私的日记应用，帮你捕捉、组织和重温生活的点滴，将你的记忆变为永恒的宝藏。"
-        }
 ---
 
 <script setup>
@@ -21,10 +11,10 @@ import { screenshotsConfig } from '../../config/screenshots.js'
 </script>
 
 <HeroWithPhone 
-  name="人生笔记"
-  text="用图文,视频,录音日记一生"
-  tagline="记录生活的每一个美好瞬间"
-  downloadLink="/docs/download"
+  name="人生笔记Real"
+  text="用照片记日常，把一件事接着记"
+  tagline="一张照片、一句话，留住今天。用日记串把旅行、读书和成长接起来。"
+  downloadLink="https://apps.apple.com/cn/app/id1625209452"
 />
 
 <FeatureGallery :screenshots="screenshotsConfig.zh" />

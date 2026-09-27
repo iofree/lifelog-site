@@ -1,5 +1,7 @@
 ---
 outline: deep
+title: Subscription Service Agreement
+description: Read the Lifelog Note subscription service agreement, including automatic renewal, billing periods, cancellation and account restrictions.
 ---
 
 # Subscription Service Agreement

@@ -1,5 +1,7 @@
 ---
 outline: deep
+title: Privacy Policy and Terms of Use
+description: Read the Lifelog Note privacy policy and terms of use, including permissions, information use, policy changes and contact details.
 ---
 
 # Privacy Policy & Terms of Use
@@ -15,7 +17,7 @@ outline: deep
 
 **(B)** This app also does not allow any third party to collect, edit, sell or distribute your personal information for free by any means. If any user of this app platform engages in the above activities, once discovered, this app has the right to immediately terminate the service agreement with that user.
 
-**(C)** Access, correct and delete your personal information: This app does not contain any account registration, and all data is stored locally. Therefore, there is no need to provide paths for personal information inquiry, correction, deletion, and account cancellation.
+**(C)** Access, correct and delete your personal information: This app supports email account registration to associate accounts with membership benefits. To use these membership features, you need to create an account and password. We store this data in encrypted form.
 
 ## Changes to This Privacy Policy
 
@@ -34,6 +36,13 @@ outline: deep
 7. Allow the app to take photos and videos: The app supports users to take photos and videos for diary entries.
 8. Allow the app to obtain ANDROID ID personal information: Bind and verify user membership with the device uniquely.
 9. Allow auto-start/associated start: When you use desktop widgets or diary reminders, to ensure content can be updated according to conditions, you can manually set to allow auto-start/associated start so that diary reminders can be updated according to set conditions.
+10. Allow the app to read the clipboard when adding templates: To help you import a copied template, the app attempts to read and identify template information when you add a new template. This data is processed only on your device.
+11. To keep the app working properly and compatible with different devices, the app may obtain device information, including the device model, operating system version and device identifiers such as the device serial number (SN) and Android ID.
+This information is used only to:
+identify the device environment and keep the app stable;
+investigate app errors;
+improve device compatibility.
+We do not use this information for user profiling, advertising recommendations or sale to third parties.
 
 ## Contact Information
 

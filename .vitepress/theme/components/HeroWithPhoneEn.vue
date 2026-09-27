@@ -10,40 +10,51 @@
           <div class="highlight-item">
             <div class="highlight-icon">📝</div>
             <div class="highlight-content">
-              <span class="highlight-title">Rich Text Editor</span>
-              <span class="highlight-desc">Support rich text formatting to make your diary more vivid</span>
+              <a href="/en/docs/thread" class="highlight-title">Diary Threads</a>
+              <span class="highlight-desc">Connect related entries into one story</span>
             </div>
           </div>
           <div class="highlight-item">
             <div class="highlight-icon">📸</div>
             <div class="highlight-content">
-              <span class="highlight-title">Multimedia Support</span>
-              <span class="highlight-desc">Images, videos, audio - record life in all dimensions</span>
+              <span class="highlight-title">Live Photos, Video & Audio</span>
+              <span class="highlight-desc">Keep motion and sound with membership features</span>
             </div>
           </div>
           <div class="highlight-item">
             <div class="highlight-icon">🔒</div>
             <div class="highlight-content">
-              <span class="highlight-title">Data Security</span>
-              <span class="highlight-desc">Local storage, your data is completely under your control</span>
+              <a href="/en/docs/backup-and-migration" class="highlight-title">Local Storage & Backups</a>
+              <span class="highlight-desc">Keep entries on your device and choose your own backups</span>
             </div>
           </div>
           <div class="highlight-item">
             <div class="highlight-icon">📅</div>
             <div class="highlight-content">
-              <span class="highlight-title">Calendar View & Photo Wall</span>
-              <span class="highlight-desc">Timeline display and image gallery browsing</span>
+              <span class="highlight-title">Photo Calendar</span>
+              <span class="highlight-desc">Revisit recorded days in your calendar and timeline</span>
             </div>
           </div>
         </div>
         
+        <p class="hero-note">Known as 人生笔记Real in China. Free to download, with optional paid features.</p>
+
         <div class="hero-actions">
           <a :href="downloadLink" class="hero-btn primary">
             <div class="btn-content">
               <span class="btn-icon">📱</span>
               <div class="btn-text">
-                <span class="btn-title">Download Now</span>
-                <span class="btn-subtitle">iOS & Android</span>
+                <span class="btn-title">App Store</span>
+                <span class="btn-subtitle">iPhone & iPad</span>
+              </div>
+            </div>
+          </a>
+          <a href="/en/docs/download" class="hero-btn secondary">
+            <div class="btn-content">
+              <span class="btn-icon">🤖</span>
+              <div class="btn-text">
+                <span class="btn-title">Android</span>
+                <span class="btn-subtitle">Download options</span>
               </div>
             </div>
           </a>
@@ -53,11 +64,7 @@
       <div class="hero-phone">
         <div class="phone-mockup">
           <div class="phone-shadow"></div>
-          <img src="/assets/black.png" alt="Phone mockup" class="phone-frame" />
-          <div class="screen-content">
-            <img src="/assets/screenshot/main.png" alt="App screenshot" class="app-screenshot" />
-          </div>
-          <div class="phone-glow"></div>
+          <img :src="heroScreenshot.src" :alt="heroScreenshot.alt" :width="heroScreenshot.width" :height="heroScreenshot.height" class="phone-frame" fetchpriority="high" decoding="async" />
         </div>
       </div>
     </div>
@@ -65,6 +72,10 @@
 </template>
 
 <script setup>
+import { screenshotsConfig } from '../../../config/screenshots'
+
+const heroScreenshot = screenshotsConfig.en[0]
+
 defineProps({
   name: {
     type: String,
@@ -182,6 +193,20 @@ defineProps({
   font-size: 1.1rem;
 }
 
+.hero-note {
+  margin-bottom: 20px;
+  font-size: 0.875rem;
+  color: var(--vp-c-text-2);
+}
+
+.hero-btn.secondary {
+  border: 1px solid var(--vp-c-border);
+}
+
+.hero-btn.secondary .btn-content {
+  color: var(--vp-c-text-1);
+}
+
 .hero-actions {
   display: flex;
   gap: 16px;
@@ -287,26 +312,6 @@ defineProps({
   display: block;
   position: relative;
   z-index: 2;
-}
-
-.screen-content {
-  position: absolute;
-  top: 5%;
-  left: 5%;
-  right: 5%;
-  bottom: 5%;
-  border-radius: 38px;
-  overflow: hidden;
-  z-index: 3;
-  background: #000;
-}
-
-.app-screenshot {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
 }
 
 @media (max-width: 768px) {

@@ -4,23 +4,28 @@
 
 ### 1. 基础文件
 - **robots.txt**: 指导搜索引擎爬虫。
-- **sitemap.xml**: 通过 `vitepress-plugin-sitemap` 自动生成站点地图。
+- **sitemap.xml**: 通过 VitePress 内置 Sitemap 功能生成站点地图，不使用构建时间伪装内容更新时间。
 - **manifest.json**: 支持 PWA (Progressive Web App)。
 
 ### 2. Meta标签和SEO工具
-- **动态Meta标签**: 通过在 `.vitepress/theme/index.ts` 中集成的自定义 `seo.ts` 工具，动态生成每个页面的SEO相关meta标签（如 `title`, `description`, `keywords`）。
+- **动态Meta标签**: 在 `.vitepress/config/index.ts` 的 `transformPageData` 中调用 `seo.ts`，按重写后的页面路径生成 canonical、逐页 hreflang、Open Graph 和 Twitter 标签；构建 HTML 与客户端路由使用同一份页面数据。
 - **Frontmatter驱动**: 每个页面的SEO数据（标题、描述、关键词）都在其Markdown文件的frontmatter中定义，方便维护。
 - **Open Graph 和 Twitter Cards**: `seo.ts` 工具自动生成用于社交媒体分享的Open Graph和Twitter Card标签。
+- **索引状态**: 正常页使用 `index`，未知路由默认 `noindex`，均由 VitePress 的页面数据管理，避免从 404 返回时残留标签。
 - **多语言支持**: 通过 `hreflang` 标签，为中英文页面提供多语言支持。
 
 ### 3. 结构化数据 (JSON-LD)
-- **可复用组件**: 创建了可复用的 `StructuredData.vue` 组件，用于在页面中注入JSON-LD结构化数据。
+- **构建时生成**: `seo.ts` 输出有效 JSON-LD 字符串，避免组件未注册或对象被渲染为 `[object Object]`。
 - **网站信息 (WebSite)**: 在首页（中文和英文）添加了 `WebSite` 类型的结构化数据。
-- **文章 (Article)**: 在内容页面（如功能特性页面）添加了 `Article` 类型的结构化数据。
+- **应用与内容页**: 首页增加 `SoftwareApplication`；文档输出 `WebPage`，链接到同一网站和应用实体。
 
 ### 4. 性能优化
 - **资源预加载**: 预加载关键CSS和JS资源。
 - **字体预连接**: 预连接到字体服务器，以加速字体加载。
+
+## 验证
+
+运行 `npm test`、`npm run build` 后运行 `npm run test:seo`，检查产物中的页面元数据、语言配对、结构化数据、图片文件及 404。固定图标在 `public/assets/`，商店截图从 `assets/app-store/` 通过 import 进入构建，来源与尺寸见 `source.json`。浏览器验收还需覆盖 404 往返、语言切换和移动端布局。
 
 ## 🔧 需要配置
 

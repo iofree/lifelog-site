@@ -1,8 +1,5 @@
 import type { Theme } from 'vitepress'
-import DefaultTheme from 'vitepress/theme'
-import { h, watch } from 'vue'
-import { useData, useRoute } from 'vitepress'
-import { applySeo } from '../utils/seo'
+import DefaultTheme from 'vitepress/theme-without-fonts'
 import './custom.css'
 import './page-styles.css'
 import HeroWithPhone from './components/HeroWithPhone.vue'
@@ -12,25 +9,10 @@ import FeaturesSectionEn from './components/FeaturesSectionEn.vue'
 import FeatureGallery from './components/FeatureGallery.vue'
 import FeatureGalleryEn from './components/FeatureGalleryEn.vue'
 import Breadcrumb from './components/Breadcrumb.vue'
+import { installAnalytics } from '../utils/analytics'
 
 export default {
   extends: DefaultTheme,
-  Layout: () => {
-    const { frontmatter, site } = useData()
-    const route = useRoute()
-
-    watch(
-      () => route.path,
-      () => {
-        applySeo(frontmatter.value, site.value)
-      },
-      { immediate: true }
-    )
-
-    return h(DefaultTheme.Layout, null, {
-      // pass through slots
-    })
-  },
   enhanceApp({ app, router }) {
     // 注册全局组件
     app.component('HeroWithPhone', HeroWithPhone)
@@ -75,6 +57,8 @@ export default {
           // 忽略localStorage错误
         }
       }
+
+      installAnalytics(router, { production: import.meta.env.PROD })
     }
   }
 } satisfies Theme

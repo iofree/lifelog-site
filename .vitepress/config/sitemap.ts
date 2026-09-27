@@ -22,6 +22,7 @@ export const sitemapConfig = {
   
   // 页面分类规则
   getPageCategory: (url: string) => {
+    url = '/' + url.replace(/^\//, '')
     if (url === '/' || url === '/en/') return 'home'
     if (url.includes('/download')) return 'download'
     if (url.includes('/docs/')) return 'docs'
@@ -43,26 +44,22 @@ export const sitemapConfig = {
     {
       url: '/',
       changefreq: 'weekly',
-      priority: 1.0,
-      lastmod: new Date().toISOString()
+      priority: 1.0
     },
     {
       url: '/en/',
       changefreq: 'weekly', 
-      priority: 1.0,
-      lastmod: new Date().toISOString()
+      priority: 1.0
     },
     {
       url: '/docs/download',
       changefreq: 'weekly',
-      priority: 0.9,
-      lastmod: new Date().toISOString()
+      priority: 0.9
     },
     {
       url: '/en/docs/download',
       changefreq: 'weekly',
-      priority: 0.9,
-      lastmod: new Date().toISOString()
+      priority: 0.9
     }
   ],
   
@@ -74,8 +71,7 @@ export const sitemapConfig = {
       return {
         ...item,
         changefreq: sitemapConfig.changefreqs[category as keyof typeof sitemapConfig.changefreqs] || 'monthly',
-        priority: sitemapConfig.priorities[category as keyof typeof sitemapConfig.priorities] || 0.5,
-        lastmod: new Date().toISOString()
+        priority: sitemapConfig.priorities[category as keyof typeof sitemapConfig.priorities] || 0.5
       }
     })
   }

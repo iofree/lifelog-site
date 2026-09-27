@@ -13,6 +13,7 @@
     "clean": "rm -rf dist .vitepress/cache",
     "build:clean": "npm run clean && npm run build:prod",
     "test": "vitest run",
+    "test:seo": "node scripts/verify-seo.mjs",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "test:e2e": "playwright test"

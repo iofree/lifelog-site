@@ -1,49 +1,35 @@
-// 分析工具配置
-export const analyticsConfig = {
-  // Google Analytics 4 - 需要配置实际ID
-  googleAnalytics: {
-    id: '', // 请替换为实际的GA4测量ID，如：G-XXXXXXXXXX
-    enabled: false // 配置ID后设为true
-  },
+import type { HeadConfig } from 'vitepress'
 
-  // 百度统计 - 需要配置实际ID
+// 可通过构建环境变量配置；不填 ID 时不加载任何分析服务。
+export const analyticsConfig = {
+  hostname: 'lifelog.iofree.xyz',
+  provider: 'ga4',
+  googleAnalytics: {
+    id: '',
+    enabled: false
+  },
   baiduAnalytics: {
-    id: '', // 请替换为实际的百度统计ID
-    enabled: false // 配置ID后设为true
+    id: '',
+    enabled: false
   }
 }
 
-// 生成分析工具脚本
-export function generateAnalyticsScripts() {
-  const scripts = []
+// head 只输出配置。SDK 由浏览器在生产构建、生产域名同时满足时加载。
+export function generateAnalyticsScripts(env: Record<string, string | undefined> = process.env): HeadConfig[] {
+  const provider = env.LIFELOG_ANALYTICS_PROVIDER || analyticsConfig.provider
+  const configured = provider === 'ga4'
+    ? analyticsConfig.googleAnalytics
+    : analyticsConfig.baiduAnalytics
+  const environmentId = provider === 'ga4' ? env.LIFELOG_GA4_ID : env.LIFELOG_BAIDU_ID
+  const id = (environmentId || (configured.enabled ? configured.id : '')).trim()
+  const valid = provider === 'ga4'
+    ? /^G-[A-Z0-9]{6,20}$/.test(id)
+    : provider === 'baidu' && /^[a-f0-9]{32}$/i.test(id)
+  if (!valid) return []
 
-  // Google Analytics 4
-  if (analyticsConfig.googleAnalytics.enabled && analyticsConfig.googleAnalytics.id) {
-    scripts.push(
-      ['script', { async: true, src: `https://www.googletagmanager.com/gtag/js?id=${analyticsConfig.googleAnalytics.id}` }],
-      ['script', {}, `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '${analyticsConfig.googleAnalytics.id}');
-      `]
-    )
-  }
-
-  // 百度统计
-  if (analyticsConfig.baiduAnalytics.enabled && analyticsConfig.baiduAnalytics.id) {
-    scripts.push(
-      ['script', {}, `
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?${analyticsConfig.baiduAnalytics.id}";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-      `]
-    )
-  }
-
-  return scripts
+  return [[
+    'script',
+    { id: 'lifelog-analytics-config', type: 'application/json' },
+    JSON.stringify({ provider, id, hostname: analyticsConfig.hostname }).replace(/</g, '\\u003c')
+  ]]
 }

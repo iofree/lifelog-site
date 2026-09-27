@@ -1,92 +1,91 @@
 // 首页截图配置文件
 // 支持中英文分别配置不同的截图
+// 来源与抓取记录：assets/app-store/source.json
+
+import zhScreenshot1 from '../assets/app-store/zh-CN/01.webp'
+import zhScreenshot2 from '../assets/app-store/zh-CN/02.webp'
+import zhScreenshot3 from '../assets/app-store/zh-CN/03.webp'
+import zhScreenshot4 from '../assets/app-store/zh-CN/04.webp'
+import zhScreenshot5 from '../assets/app-store/zh-CN/05.webp'
+import enScreenshot1 from '../assets/app-store/en-US/01.webp'
+import enScreenshot2 from '../assets/app-store/en-US/02.webp'
+import enScreenshot3 from '../assets/app-store/en-US/03.webp'
+import enScreenshot4 from '../assets/app-store/en-US/04.webp'
+import enScreenshot5 from '../assets/app-store/en-US/05.webp'
+import enScreenshot6 from '../assets/app-store/en-US/06.webp'
 
 export const screenshotsConfig = {
   // 中文版截图配置
   zh: [
     {
-      src: '/assets/img/1.png',
-      alt: '日历视图 - 按日期浏览你的生活记录'
+      src: zhScreenshot1,
+      width: 880,
+      height: 1912,
+      alt: '人生笔记照片日历：按日期展示照片，并在下方浏览当天的图文日记'
     },
     {
-      src: '/assets/img/2.png',
-      alt: '富文本编辑 - 支持多种格式的文本编辑'
+      src: zhScreenshot2,
+      width: 880,
+      height: 1912,
+      alt: '图文混排日记：在文字之间插入实况照片、视频和录音，评论也可添加图片'
     },
     {
-      src: '/assets/img/3.png',
-      alt: '图片记录 - 用照片记录美好瞬间'
+      src: zhScreenshot3,
+      width: 880,
+      height: 1912,
+      alt: '日记串列表：将相关记录分组，展示每个日记串的日期范围和封面'
     },
     {
-      src: '/assets/img/4.png',
-      alt: '视频日记 - 动态记录生活点滴'
+      src: zhScreenshot4,
+      width: 880,
+      height: 1912,
+      alt: '字数统计：查看总字数、平均日字数、记录天数和写作热力图'
     },
     {
-      src: '/assets/img/5.png',
-      alt: '语音记录 - 用声音记录当下心情'
-    },
-    {
-      src: '/assets/img/6.png',
-      alt: '标签管理 - 轻松分类整理内容'
-    },
-    {
-      src: '/assets/img/7.png',
-      alt: '搜索功能 - 快速找到历史记录'
-    },
-    {
-      src: '/assets/img/8.png',
-      alt: '数据统计 - 了解你的记录习惯'
-    },
-    {
-      src: '/assets/img/9.png',
-      alt: '主题设置 - 个性化你的应用界面'
-    },
-    {
-      src: '/assets/img/10.png',
-      alt: '数据备份 - 安全保护你的珍贵记录'
+      src: zhScreenshot5,
+      width: 880,
+      height: 1912,
+      alt: '随机回忆卡片：用照片、文字和日期回顾过去的日记'
     }
   ],
 
   // 英文版截图配置
   en: [
     {
-      src: '/assets/img/1.png',
-      alt: 'Calendar View - Browse your life records by date'
+      src: enScreenshot1,
+      width: 828,
+      height: 1792,
+      alt: 'Photo calendar with daily photo thumbnails and the selected day’s journal entry'
     },
     {
-      src: '/assets/img/2.png',
-      alt: 'Rich Text Editor - Support various text formatting'
+      src: enScreenshot2,
+      width: 828,
+      height: 1792,
+      alt: 'Timeline of journal entries with text, photo grids, dates, locations, and tags'
     },
     {
-      src: '/assets/img/3.png',
-      alt: 'Photo Records - Capture beautiful moments with images'
+      src: enScreenshot3,
+      width: 828,
+      height: 1792,
+      alt: 'Random memory card showing a basketball photo and a fitness journal entry'
     },
     {
-      src: '/assets/img/4.png',
-      alt: 'Video Diary - Record life moments dynamically'
+      src: enScreenshot4,
+      width: 828,
+      height: 1792,
+      alt: 'Diary Thread list with cover photos and date ranges for related entries'
     },
     {
-      src: '/assets/img/5.png',
-      alt: 'Voice Recording - Record your mood with sound'
+      src: enScreenshot5,
+      width: 828,
+      height: 1792,
+      alt: 'Diary Thread timeline showing connected entries with text, photos, and an option to add a new entry'
     },
     {
-      src: '/assets/img/6.png',
-      alt: 'Tag Management - Easily categorize and organize content'
-    },
-    {
-      src: '/assets/img/7.png',
-      alt: 'Search Function - Quickly find historical records'
-    },
-    {
-      src: '/assets/img/8.png',
-      alt: 'Data Statistics - Understand your recording habits'
-    },
-    {
-      src: '/assets/img/9.png',
-      alt: 'Theme Settings - Personalize your app interface'
-    },
-    {
-      src: '/assets/img/10.png',
-      alt: 'Data Backup - Safely protect your precious records'
+      src: enScreenshot6,
+      width: 828,
+      height: 1792,
+      alt: 'Random memory card showing a park photo and a travel journal entry'
     }
   ]
 }
