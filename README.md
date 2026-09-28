@@ -22,7 +22,7 @@ npm run preview
 
 ```
 ├── .vitepress/
-│   ├── config.ts          # VitePress 配置
+│   ├── config/            # VitePress 配置模块
 │   └── theme/             # 自定义主题
 │       ├── components/    # Vue 组件
 │       ├── custom.css     # 自定义样式
@@ -156,20 +156,19 @@ export const screenshotsConfig = {
 
 功能截图展示组件：
 - 支持配置化截图管理
-- 响应式网格布局
-- 悬停动画效果
+- 桌面端网格布局，移动端横向滑动浏览
+- 网页标题与说明，支持键盘操作的截图放大预览
 - 中英文分别配置
 
 ## 🔧 自定义配置
 
 ### 修改手机展示截图
 
-更新 `config/screenshots.js` 中对应语言的首张截图及其真实宽高即可；Hero 与画廊共享同一来源。
+更新 `config/screenshots.js` 中对应语言的首张截图及其真实宽高即可；首张用于 Hero，首页画廊从第二张开始，避免重复展示。
 
 ### 修改下载按钮图标
 
-- App Store: `assets/appstore.png`
-- Google Play: `assets/playstore.png`
+下载按钮使用组件模板中的 emoji，可在 `HeroWithPhone.vue`、`HeroWithPhoneEn.vue` 和 `AndroidDownload.vue` 中修改。
 
 ### 调整截图网格
 
@@ -205,12 +204,22 @@ export const screenshotsConfig = {
 - 分享图在 `public/assets/social/`，由页面语言选择；正文截图保留真实宽高、替代文本和懒加载。
 - `node scripts/measure-assets.mjs dist` 可测量构建资源。结果为本地静态体积及压缩估计，不代表浏览器实际传输量或 Core Web Vitals。主题使用系统字体，不下载 VitePress 字体。
 
+## Android 下载入口
+
+上架渠道由维护者确认后维护在 `.vitepress/utils/android-download.ts`，目前包括华为、小米、荣耀、OPPO、vivo 和应用宝。已核实的小米与应用宝公开详情页也记录在该配置中；其他市场使用包名 `xyz.iofree.lifenotes` 的原生详情入口。
+
+手机浏览器的品牌信息可识别时，默认显示对应市场和官方 APK；识别不到品牌的 Android 设备显示官方 APK。下载页的其他入口直接显示在“其他下载方式”下，可手动选择，不重复显示已推荐的市场。微信等内置浏览器使用应用宝网页，并提供在系统浏览器打开的提示；桌面和 iOS 进入下载页。未声明 Android 的 HarmonyOS 浏览器提示先确认兼容版本，不自动下载 APK。
+
+所有市场跳转均由点击触发，使用标准 `market://details` 的 Android Intent。Chrome 的 `browser_fallback_url` 在市场无法唤起时指向官方 APK；其他浏览器对 Intent 的支持各异，页面始终保留 APK 备用入口。网页无法检测已安装的市场、实时上架状态或商店内的“未找到应用”，也不会用计时器推断成功或触发重复下载。OPPO 配置面向当前 `com.heytap.market`，旧商店或不支持该入口的版本可使用 APK。
+
+浏览器机制参考：https://developer.chrome.com/docs/android/intents 。新增、下架或变更渠道时同步更新配置并用对应品牌的真实手机检查唤起；UA 模拟和单元测试不能代替商店端验收。
+
 ## 下载转化统计
 
 默认不加载统计服务。部署平台需在**构建时**设置 `LIFELOG_GA4_ID=G-XXXXXXXXXX`；重新构建后，仅生产构建且访问 `https://lifelog.iofree.xyz` 时加载 GA4，localhost 和预览域名不发送数据。`LIFELOG_ANALYTICS_PROVIDER=none` 可关闭；如使用百度统计，显式设置 `LIFELOG_ANALYTICS_PROVIDER=baidu` 和 `LIFELOG_BAIDU_ID`。
 
 GA4 数据流设置中，关闭增强型衡量的“网页浏览 → 根据浏览器历史记录事件进行网页更改”，避免与本站手动发送的 `page_view` 重复。页面初次访问、SPA 切换和前进后退使用同一统计逻辑，不统计仅查询参数或锚点变化。
 
-下载点击事件名为 `download_click`，参数为 `platform`、`placement`、`page_path`、`locale`、`destination`。在 GA4 中将前四项注册为事件级自定义维度，将 `download_click` 标记为关键事件。目标地址移除查询参数与锚点，不读取输入框内容，也不阻塞下载跳转。点击次数不等于安装量；真实安装和商店转化需与 App Store Connect 数据一起分析。
+下载点击事件名为 `download_click`，参数为 `platform`、`placement`、`page_path`、`locale`、`destination`。在 GA4 中将前四项注册为事件级自定义维度，将 `download_click` 标记为关键事件。网页目标地址移除查询参数与锚点；已配置的原生市场跳转只记录 `android-market:渠道名`，不读取设备标识或输入框内容，也不阻塞下载跳转。点击次数不等于安装量；真实安装和商店转化需与 App Store Connect 数据一起分析。
 
 启用后在正式域名依次检查首页、语言切换、指南与下载按钮；在 GA4 实时报告确认事件、页面路径和语言，无重复页面访问。未配置有效 ID 的构建只能验证关闭状态，不能据此宣称统计已接通。

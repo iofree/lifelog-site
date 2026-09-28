@@ -1,7 +1,7 @@
 ---
 outline: deep
 title: Download for iPhone, iPad and Android
-description: Get Lifelog Note from the App Store or download the Android APK. Read about supported platforms and free and membership features.
+description: Download Lifelog Note from the App Store, Android app markets or the official APK. Start keeping a photo journal for free.
 ---
 
 # Download Lifelog Note
@@ -18,21 +18,19 @@ Download the iOS/iPadOS app from the App Store. Check the store page for current
 
 Or search for "Lifelog Note" in the App Store.
 
-## Android Version
+<span id="android-version"></span>
 
-The Android app is named 人生笔记Real. Download the APK from the official link below:
+## Android Version {#android}
 
-<a href="https://apk.iofree.xyz/lifelog.apk" class="download-btn android">
-  🤖 Android APK
-</a>
+The Android app is named 人生笔记Real. Get it from your phone’s app market or download the official APK.
 
-## Free and Membership Features
+<AndroidDownload english full />
 
-The app is free to download with no limit on the number of entries. Free users can add up to 9 ordinary photos per entry and create 3 diary threads. Manual cloud backup and full LAN transfer are free. Members can add up to 25 photos, Live Photos and videos in total per entry and use Live Photos, videos, audio recordings, media within the text, automatic backup and PDF export. Current benefits and prices are shown in the app. Speech-to-text is available on iOS; media compatibility depends on your platform and app version.
+## Start your journal
 
-Version 1.23 adds Android motion photos and selective LAN transfer by notebook or thread, both for members. Check which version your download channel offers. Android supports selected motion photo formats, with compatibility varying by device. See [Live Photo support](/en/docs/qa#does-the-app-support-live-photos).
+Start with photos and a few words, with no limit on the number of entries.
 
-Android and iOS memberships are purchased separately. An Android membership account can be logged in and used on only one device. Diary data can be moved using import/export or LAN transfer; moving the membership login does not transfer entries. Before changing devices, read the [backup and migration guide](/en/docs/backup-and-migration) and [FAQ](/en/docs/qa).
+Entries are stored on your device by default. See the [backup and migration guide](/en/docs/backup-and-migration) when changing phones, or the [FAQ](/en/docs/qa) for feature details.
 
 See [public release notes](/en/docs/changelog) for recent published changes. To start writing, follow the [travel journal](/en/docs/travel-journal) or [reading journal](/en/docs/reading-journal) guide.
 

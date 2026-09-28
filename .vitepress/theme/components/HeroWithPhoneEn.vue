@@ -18,7 +18,7 @@
             <div class="highlight-icon">📸</div>
             <div class="highlight-content">
               <span class="highlight-title">Live Photos, Video & Audio</span>
-              <span class="highlight-desc">Keep motion and sound with membership features</span>
+              <span class="highlight-desc">Keep the movement and sounds behind your memories</span>
             </div>
           </div>
           <div class="highlight-item">
@@ -36,8 +36,6 @@
             </div>
           </div>
         </div>
-        
-        <p class="hero-note">Known as 人生笔记Real in China. Free to download, with optional paid features.</p>
 
         <div class="hero-actions">
           <a :href="downloadLink" class="hero-btn primary">
@@ -49,15 +47,7 @@
               </div>
             </div>
           </a>
-          <a href="/en/docs/download" class="hero-btn secondary">
-            <div class="btn-content">
-              <span class="btn-icon">🤖</span>
-              <div class="btn-text">
-                <span class="btn-title">Android</span>
-                <span class="btn-subtitle">Download options</span>
-              </div>
-            </div>
-          </a>
+          <AndroidDownload english />
         </div>
       </div>
       
@@ -67,12 +57,14 @@
           <img :src="heroScreenshot.src" :alt="heroScreenshot.alt" :width="heroScreenshot.width" :height="heroScreenshot.height" class="phone-frame" fetchpriority="high" decoding="async" />
         </div>
       </div>
+
     </div>
   </div>
 </template>
 
 <script setup>
 import { screenshotsConfig } from '../../../config/screenshots'
+import AndroidDownload from './AndroidDownload.vue'
 
 const heroScreenshot = screenshotsConfig.en[0]
 
@@ -99,7 +91,7 @@ defineProps({
 <style scoped>
 .hero-with-phone {
   position: relative;
-  padding: 120px 20px 60px;
+  padding: 104px 20px 40px;
   background: var(--vp-c-bg);
   min-height: 70vh;
   display: flex;
@@ -112,7 +104,7 @@ defineProps({
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 40px 80px;
   align-items: center;
   position: relative;
   z-index: 1;
@@ -149,9 +141,9 @@ defineProps({
 
 .feature-highlights {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .highlight-item {
@@ -171,6 +163,7 @@ defineProps({
 }
 
 .highlight-content {
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -193,22 +186,9 @@ defineProps({
   font-size: 1.1rem;
 }
 
-.hero-note {
-  margin-bottom: 20px;
-  font-size: 0.875rem;
-  color: var(--vp-c-text-2);
-}
-
-.hero-btn.secondary {
-  border: 1px solid var(--vp-c-border);
-}
-
-.hero-btn.secondary .btn-content {
-  color: var(--vp-c-text-1);
-}
-
 .hero-actions {
   display: flex;
+  align-items: flex-start;
   gap: 16px;
   flex-wrap: wrap;
 }
@@ -273,7 +253,8 @@ defineProps({
 .btn-subtitle {
   font-size: 0.8rem;
   opacity: 0.9;
-  margin-top: 1px;
+  line-height: 1.4;
+  margin-top: 2px;
 }
 
 .hero-phone {
@@ -316,18 +297,19 @@ defineProps({
 
 @media (max-width: 768px) {
   .hero-with-phone {
-    padding: 80px 20px 40px;
+    padding: 48px 20px 32px;
     min-height: auto;
   }
   
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 28px;
     text-align: center;
   }
   
   .hero-name {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    margin-bottom: 16px;
   }
   
   .hero-text {
@@ -335,12 +317,12 @@ defineProps({
   }
   
   .hero-tagline {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    margin-bottom: 24px;
   }
   
   .feature-highlights {
-    grid-template-columns: 1fr;
-    gap: 12px;
+    text-align: left;
   }
   
   .highlight-item {
@@ -348,24 +330,33 @@ defineProps({
   }
   
   .hero-actions {
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
   }
   
 
   
+  .btn-content {
+    padding: 14px 12px;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .btn-icon {
+    font-size: 1.35rem;
+  }
+
+  .btn-title {
+    font-size: 0.95rem;
+  }
+
+  .btn-subtitle {
+    font-size: 0.75rem;
+  }
+
   .phone-mockup {
     width: 280px;
-    transform: none;
-  }
-  
-  .phone-mockup:hover {
-    transform: scale(1.02);
-  }
-  
-  .floating-shape {
-    display: none;
   }
 }
 </style>

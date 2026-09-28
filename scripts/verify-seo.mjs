@@ -92,9 +92,9 @@ for (const url of urls) {
   if (path === '/' || path === '/en/') {
     assert.deepEqual(schemas.map(schema => schema['@type']), ['WebSite', 'SoftwareApplication'])
     const expectedScreenshots = screenshotSources.locales[english ? 'en-US' : 'zh-CN'].screenshots
-    const galleryImages = [...document.querySelectorAll('.screenshots-grid img')]
-    assert.equal(galleryImages.length, expectedScreenshots.length)
-    for (const [index, img] of galleryImages.entries()) {
+    const homepageImages = [one('.hero-phone img'), ...document.querySelectorAll('.screenshots-grid img')]
+    assert.equal(homepageImages.length, expectedScreenshots.length)
+    for (const [index, img] of homepageImages.entries()) {
       const expected = expectedScreenshots[index]
       assert.equal(img.getAttribute('alt'), expected.alt)
       assert.equal(Number(img.getAttribute('width')), expected.delivery.width)
@@ -102,7 +102,7 @@ for (const url of urls) {
       const file = asset(img.getAttribute('src'), url)
       assert.equal(createHash('sha256').update(readFileSync(file)).digest('hex'), expected.delivery.sha256)
     }
-    assert.equal(one('.hero-phone img').getAttribute('src'), galleryImages[0].getAttribute('src'))
+    assert.equal(new Set(homepageImages.map(img => img.getAttribute('src'))).size, homepageImages.length, url + ': repeated homepage screenshot')
     assert.ok([...document.querySelectorAll('.hero-actions a')].some(node => node.getAttribute('href')?.includes('apps.apple.com')))
     assert.ok(document.body.textContent.includes('日记串') || document.body.textContent.includes('Diary Threads'))
   } else {

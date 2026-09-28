@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import { JSDOM, VirtualConsole } from 'jsdom'
 import { generateAnalyticsScripts } from '../config/analytics'
 import { installAnalytics } from './analytics'
+import { androidMarkets, marketIntent } from './android-download'
 
 const ga4Id = 'G-TEST123456'
 const baiduId = '1234567890abcdef1234567890abcdef'
@@ -150,6 +151,22 @@ describe('browser analytics', () => {
     expect(events(win, 'download_click')[2]).toMatchObject({ platform: 'android', placement: 'guide_end', page_path: '/docs/qa', destination: 'https://play.google.com/store/apps/details' })
     expect(events(win, 'download_click')[3].placement).toBe('other')
     expect(JSON.stringify(win.dataLayer)).not.toMatch(/secret|private/)
+  })
+
+  it('counts configured app-market intents without treating an unrelated intent as a download', () => {
+    const win = browser()
+    installAnalytics({}, { production: true, window: win })
+    for (const market of androidMarkets) {
+      win.document.body.innerHTML = '<div class="hero-with-phone"><a id="market">Android</a></div>'
+      win.document.getElementById('market')!.setAttribute('href', marketIntent(market))
+      click(win, '#market')
+      expect(events(win, 'download_click').at(-1)).toMatchObject({
+        platform: 'android', placement: 'hero', destination: 'android-market:' + market.id
+      })
+    }
+    win.document.body.innerHTML = '<a id="unknown" href="intent://unrelated#Intent;scheme=market;end">Other</a>'
+    click(win, '#unknown')
+    expect(events(win, 'download_click')).toHaveLength(androidMarkets.length)
   })
 
   it('tracks middle-button downloads once, ignores canceled and right clicks, and can detach cleanly', () => {

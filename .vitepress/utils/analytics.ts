@@ -1,3 +1,5 @@
+import { nativeMarket } from './android-download'
+
 import { nextTick } from 'vue'
 
 type RouteHook = (to: string) => void | Promise<void>
@@ -37,6 +39,8 @@ const androidStores = new Set([
 const placements = new Set(['hero', 'guide_end', 'download_page', 'other'])
 
 function withoutQueryAndHash(value: string, base: string): string {
+  const market = nativeMarket(value)
+  if (market) return 'android-market:' + market.id
   try {
     const url = new URL(value, base)
     return /^https?:$/.test(url.protocol) ? `${url.origin}${url.pathname}` : ''
@@ -54,6 +58,7 @@ function locale(path: string): string {
 }
 
 function downloadPlatform(url: URL): string | undefined {
+  if (nativeMarket(url.href)) return 'android'
   if (!/^https?:$/.test(url.protocol)) return
   if (url.hostname === 'apps.apple.com' || url.hostname === 'itunes.apple.com') return 'ios'
   if (androidStores.has(url.hostname) ||

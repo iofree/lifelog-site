@@ -4,11 +4,9 @@ import './custom.css'
 import './page-styles.css'
 import HeroWithPhone from './components/HeroWithPhone.vue'
 import HeroWithPhoneEn from './components/HeroWithPhoneEn.vue'
-import FeaturesSection from './components/FeaturesSection.vue'
-import FeaturesSectionEn from './components/FeaturesSectionEn.vue'
 import FeatureGallery from './components/FeatureGallery.vue'
 import FeatureGalleryEn from './components/FeatureGalleryEn.vue'
-import Breadcrumb from './components/Breadcrumb.vue'
+import AndroidDownload from './components/AndroidDownload.vue'
 import { installAnalytics } from '../utils/analytics'
 
 export default {
@@ -17,11 +15,9 @@ export default {
     // 注册全局组件
     app.component('HeroWithPhone', HeroWithPhone)
     app.component('HeroWithPhoneEn', HeroWithPhoneEn)
-    app.component('FeaturesSection', FeaturesSection)
-    app.component('FeaturesSectionEn', FeaturesSectionEn)
     app.component('FeatureGallery', FeatureGallery)
     app.component('FeatureGalleryEn', FeatureGalleryEn)
-    app.component('Breadcrumb', Breadcrumb)
+    app.component('AndroidDownload', AndroidDownload)
 
     // 语言偏好记录和自动跳转
     if (typeof window !== 'undefined') {

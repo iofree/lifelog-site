@@ -30,39 +30,6 @@ export const sitemapConfig = {
     return 'features'
   },
   
-  // 排除的页面
-  excludePatterns: [
-    '/404',
-    '/.vitepress/',
-    '/node_modules/',
-    '/dist/',
-    '*.map'
-  ],
-  
-  // 自定义页面配置
-  customPages: [
-    {
-      url: '/',
-      changefreq: 'weekly',
-      priority: 1.0
-    },
-    {
-      url: '/en/',
-      changefreq: 'weekly', 
-      priority: 1.0
-    },
-    {
-      url: '/docs/download',
-      changefreq: 'weekly',
-      priority: 0.9
-    },
-    {
-      url: '/en/docs/download',
-      changefreq: 'weekly',
-      priority: 0.9
-    }
-  ],
-  
   // 转换函数
   transformItems: (items: any[]) => {
     return items.map((item) => {
